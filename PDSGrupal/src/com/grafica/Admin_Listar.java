@@ -1,29 +1,23 @@
 package com.grafica;
 
-import org.eclipse.swt.widgets.Display; 
-import org.eclipse.swt.widgets.Shell;
-
-import com.crud.pds.Productos;
-import com.proxy.impl.OperacionesProductosCrudProxy;
-
-import org.eclipse.swt.widgets.Composite;
-
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.widgets.Button;
-import org.eclipse.swt.widgets.Label;
-import org.eclipse.swt.widgets.Table;
-import org.eclipse.jface.viewers.TableViewer;
-import org.eclipse.swt.custom.StyledText;
-import org.eclipse.jface.text.TextViewer;
-import org.eclipse.swt.widgets.TableColumn;
 import org.eclipse.swt.events.MouseAdapter;
 import org.eclipse.swt.events.MouseEvent;
+import org.eclipse.swt.widgets.Button;
+import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Shell;
+import org.eclipse.swt.widgets.Table;
+import org.eclipse.swt.widgets.TableColumn;
 import org.eclipse.swt.widgets.TableItem;
 import org.eclipse.wb.swt.SWTResourceManager;
+
+import com.crud.pds.Productos;
+import com.proxy.impl.OperacionesProductosCrudProxy;
 
 public class Admin_Listar {
 	

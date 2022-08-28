@@ -1,6 +1,6 @@
 package com.grafica;
 
-import java.sql.SQLException; 
+import java.sql.SQLException;  
 
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.MouseAdapter;
