@@ -1,36 +1,44 @@
 package com.grafica;
 
-import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Display;  
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Composite;
+
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.wb.swt.SWTResourceManager;
+
+import com.composite.impl.CarritoCompuesto;
+import com.crud.pds.Productos;
+import com.proxy.impl.OperacionesProductosCrudProxy;
+
 import org.eclipse.swt.widgets.Spinner;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.events.MouseAdapter;
 import org.eclipse.swt.events.MouseEvent;
 
-public class CarritoAgregar {
-
-	/**
-	 * Launch the application.
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		try {
-			CarritoAgregar window = new CarritoAgregar();
-			window.open();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-
+public class Carrito_Agregar {
+	List<Productos> producto = new ArrayList<Productos>();
 	/**
 	 * Open the window.
 	 */
 	public void open() {
+		OperacionesProductosCrudProxy pc = OperacionesProductosCrudProxy.getInstance();
+		CarritoCompuesto pro = CarritoCompuesto.getInstance();
+		
+		
+		try {
+			producto = pc.LeerProductos();
+			
+		} catch (SQLException e2) {
+			// TODO Auto-generated catch block
+			e2.printStackTrace();
+		}
+		
 		Display display = Display.getDefault();
 		Shell shell = new Shell();
 		shell.setSize(615, 442);
@@ -45,35 +53,35 @@ public class CarritoAgregar {
 		lblNewLabel.setText("Agregar Productos");
 		
 		Label img_arroz = new Label(composite, SWT.NONE);
-		img_arroz.setImage(SWTResourceManager.getImage(CarritoAgregar.class, "/com/imagenes/arroz.jpg"));
+		img_arroz.setImage(SWTResourceManager.getImage(Carrito_Agregar.class, "/com/imagenes/arroz.jpg"));
 		img_arroz.setBounds(10, 33, 111, 97);
 		
 		Label img_ = new Label(composite, SWT.NONE);
-		img_.setImage(SWTResourceManager.getImage(CarritoAgregar.class, "/com/imagenes/atun.jpg"));
+		img_.setImage(SWTResourceManager.getImage(Carrito_Agregar.class, "/com/imagenes/atun.jpg"));
 		img_.setBounds(162, 31, 111, 97);
 		
 		Label img_jamon = new Label(composite, SWT.NONE);
-		img_jamon.setImage(SWTResourceManager.getImage(CarritoAgregar.class, "/com/imagenes/jamon.jpg"));
+		img_jamon.setImage(SWTResourceManager.getImage(Carrito_Agregar.class, "/com/imagenes/jamon.jpg"));
 		img_jamon.setBounds(312, 31, 111, 97);
 		
 		Label img_cocacola = new Label(composite, SWT.NONE);
-		img_cocacola.setImage(SWTResourceManager.getImage(CarritoAgregar.class, "/com/imagenes/cocacola.jpg"));
+		img_cocacola.setImage(SWTResourceManager.getImage(Carrito_Agregar.class, "/com/imagenes/cocacola.jpg"));
 		img_cocacola.setBounds(471, 33, 111, 97);
 		
 		Label img_pepsi = new Label(composite, SWT.NONE);
-		img_pepsi.setImage(SWTResourceManager.getImage(CarritoAgregar.class, "/com/imagenes/pepsi.jpg"));
+		img_pepsi.setImage(SWTResourceManager.getImage(Carrito_Agregar.class, "/com/imagenes/pepsi.jpg"));
 		img_pepsi.setBounds(10, 200, 111, 97);
 		
 		Label img_salchicha = new Label(composite, SWT.NONE);
-		img_salchicha.setImage(SWTResourceManager.getImage(CarritoAgregar.class, "/com/imagenes/salchicha.jpg"));
+		img_salchicha.setImage(SWTResourceManager.getImage(Carrito_Agregar.class, "/com/imagenes/salchicha.jpg"));
 		img_salchicha.setBounds(162, 200, 111, 97);
 		
 		Label img_yogurt = new Label(composite, SWT.NONE);
-		img_yogurt.setImage(SWTResourceManager.getImage(CarritoAgregar.class, "/com/imagenes/yogurt.jpg"));
+		img_yogurt.setImage(SWTResourceManager.getImage(Carrito_Agregar.class, "/com/imagenes/yogurt.jpg"));
 		img_yogurt.setBounds(312, 200, 111, 97);
 		
 		Label img_pollo = new Label(composite, SWT.NONE);
-		img_pollo.setImage(SWTResourceManager.getImage(CarritoAgregar.class, "/com/imagenes/pollo.jpg"));
+		img_pollo.setImage(SWTResourceManager.getImage(Carrito_Agregar.class, "/com/imagenes/pollo.jpg"));
 		img_pollo.setBounds(471, 200, 111, 97);
 		
 		Spinner libras_arroz = new Spinner(composite, SWT.BORDER);
@@ -150,9 +158,9 @@ public class CarritoAgregar {
 		yogurt.setBounds(312, 303, 55, 17);
 		yogurt.setText("Yogurt");
 		
-		Spinner spinner = new Spinner(composite, SWT.BORDER);
-		spinner.setFont(SWTResourceManager.getFont("Segoe UI", 10, SWT.NORMAL));
-		spinner.setBounds(373, 300, 47, 22);
+		Spinner cantidad_yogurt = new Spinner(composite, SWT.BORDER);
+		cantidad_yogurt.setFont(SWTResourceManager.getFont("Segoe UI", 10, SWT.NORMAL));
+		cantidad_yogurt.setBounds(373, 300, 47, 22);
 		
 		Label pollo = new Label(composite, SWT.NONE);
 		pollo.setFont(SWTResourceManager.getFont("Segoe UI", 10, SWT.NORMAL));
@@ -208,12 +216,148 @@ public class CarritoAgregar {
 		msj_pl.setFont(SWTResourceManager.getFont("Segoe UI", 10, SWT.NORMAL));
 		msj_pl.setBounds(471, 324, 111, 15);
 		
+		
+		
 		Button btnAgregar = new Button(composite, SWT.NONE);
 		btnAgregar.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseDown(MouseEvent e) {
+				boolean aux = false;
+				try {
+					
+					//Arroz
+					if(Integer.parseInt(libras_arroz.getText())>producto.get(0).getCantidad()){
+						msj_ar.setText("No disponible");						
+					}else {
+						if(Integer.parseInt(libras_arroz.getText())>0){
+							producto.get(0).setCantidad(producto.get(0).getCantidad()-Integer.parseInt(libras_arroz.getText()));
+							aux = pc.actualizar(producto.get(0), producto.get(0).getId());
+							
+							msj_ar.setText("");
+							if(aux) {
+								producto.get(0).setCantidad(Integer.parseInt(libras_arroz.getText()));
+							}
+							
+							
+						}
+					}
+					//atun
+					if(Integer.parseInt(cantidad_atun.getText())>producto.get(1).getCantidad()){
+						msj_a.setText("No disponible");						
+					}else {
+						if(Integer.parseInt(cantidad_atun.getText())>0){
+							producto.get(1).setCantidad(producto.get(1).getCantidad()-Integer.parseInt(cantidad_atun.getText()));
+							aux = pc.actualizar(producto.get(1), producto.get(1).getId());
+							
+							msj_a.setText("");
+							if(aux) {
+								producto.get(1).setCantidad(Integer.parseInt(cantidad_atun.getText()));
+							}
+							
+							
+						}
+					}
+					//Jamon
+					if(Integer.parseInt(libras_jamon.getText())>producto.get(2).getCantidad()){
+						msj_j.setText("No disponible");						
+					}else {
+						if(Integer.parseInt(libras_jamon.getText())>0){
+							producto.get(2).setCantidad(producto.get(2).getCantidad()-Integer.parseInt(libras_jamon.getText()));
+							aux = pc.actualizar(producto.get(2), producto.get(2).getId());
+					
+							msj_j.setText("");
+							if(aux) {
+								producto.get(2).setCantidad(Integer.parseInt(libras_jamon.getText()));
+							}
+							
+							
+						}
+					}
+					//Cocacola
+					if(Integer.parseInt(cantidad_cocacola.getText())>producto.get(3).getCantidad()){
+						msj_c.setText("No disponible");						
+					}else {
+						if(Integer.parseInt(cantidad_cocacola.getText())>0){
+							producto.get(3).setCantidad(producto.get(3).getCantidad()-Integer.parseInt(cantidad_cocacola.getText()));
+							aux = pc.actualizar(producto.get(3), producto.get(3).getCantidad());
+							
+							msj_c.setText("");
+							if(aux) {
+								producto.get(3).setCantidad(Integer.parseInt(cantidad_cocacola.getText()));
+							}
+							
+							
+						}
+					}
+					//Pepsi
+					if(Integer.parseInt(cantidad_pepsi.getText())>producto.get(4).getCantidad()){
+						msj_p.setText("No disponible");						
+					}else {
+						if(Integer.parseInt(cantidad_pepsi.getText())>0){
+							producto.get(4).setCantidad(producto.get(4).getCantidad()-Integer.parseInt(cantidad_pepsi.getText()));
+							aux = pc.actualizar(producto.get(4), producto.get(4).getId());
+							
+							msj_p.setText("");
+							if(aux) {
+								producto.get(4).setCantidad(Integer.parseInt(cantidad_pepsi.getText()));
+							}
+							
+							
+						}
+					}
+					//Salchicha
+					if(Integer.parseInt(libras_salchicha.getText())>producto.get(5).getCantidad()){
+						msj_s.setText("No disponible");						
+					}else {
+						if(Integer.parseInt(libras_salchicha.getText())>0){
+							producto.get(5).setCantidad(producto.get(5).getCantidad()-Integer.parseInt(libras_salchicha.getText()));
+							aux = pc.actualizar(producto.get(5), producto.get(5).getId());
+							
+							msj_s.setText("");
+							if(aux) {
+								producto.get(5).setCantidad(Integer.parseInt(libras_salchicha.getText()));
+							}
+							
+							
+						}
+					}
+					
+					//Yogurt
+					if(Integer.parseInt(cantidad_yogurt.getText())>producto.get(6).getCantidad()){
+						msj_y.setText("No disponible");						
+					}else {
+						if(Integer.parseInt(cantidad_yogurt.getText())>0){
+							producto.get(6).setCantidad(producto.get(6).getCantidad()-Integer.parseInt(cantidad_yogurt.getText()));
+							pc.actualizar(producto.get(6), producto.get(6).getId());
+						
+							msj_y.setText("");
+							producto.get(6).setCantidad(Integer.parseInt(cantidad_yogurt.getText()));
+							
+						}
+					}
+					
+					//Pollo
+					if(Integer.parseInt(libras_pollo.getText())>producto.get(7).getCantidad()){
+						msj_pl.setText("No disponible");						
+					}else {
+						if(Integer.parseInt(libras_pollo.getText())>0){
+							producto.get(7).setCantidad(producto.get(7).getCantidad()-Integer.parseInt(libras_pollo.getText()));
+							pc.actualizar(producto.get(7), producto.get(7).getId());
+							
+							msj_pl.setText("");
+							producto.get(7).setCantidad(Integer.parseInt(libras_pollo.getText()));
+							
+						}
+					}
+					
+					
+				} catch (SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				pro.getImporteTotal();
 				
-				
+							
 			}
 		});
 		btnAgregar.setFont(SWTResourceManager.getFont("Segoe UI", 10, SWT.NORMAL));

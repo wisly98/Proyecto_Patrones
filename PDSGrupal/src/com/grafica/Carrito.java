@@ -1,6 +1,6 @@
 package com.grafica;
 
-import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.Display; 
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.SWT;
@@ -8,8 +8,6 @@ import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.events.MouseAdapter;
 import org.eclipse.swt.events.MouseEvent;
 import org.eclipse.wb.swt.SWTResourceManager;
-
-import com.crud.conexion.Conexion;
 
 public class Carrito {
 
@@ -32,6 +30,12 @@ public class Carrito {
 		button.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseDown(MouseEvent e) {
+				try {
+					Carrito_Buscar window = new Carrito_Buscar();
+					window.open();
+				} catch (Exception e3) {
+					e3.printStackTrace();
+				}
 			}
 		});
 		button.setBounds(78, 31, 97, 96);
@@ -42,7 +46,7 @@ public class Carrito {
 			@Override
 			public void mouseDown(MouseEvent e) {
 				try {
-					CarritoAgregar window = new CarritoAgregar();
+					Carrito_Agregar window = new Carrito_Agregar();
 					window.open();
 				} catch (Exception e1) {
 					e1.printStackTrace();
@@ -56,7 +60,12 @@ public class Carrito {
 		button_2.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseDown(MouseEvent e) {
-			}
+				try {
+					Carrito_Mirar window = new Carrito_Mirar();
+					window.open();
+				} catch (Exception e2) {
+					e2.printStackTrace();
+				}			}
 		});
 		button_2.setBounds(78, 253, 97, 96);
 		
@@ -65,13 +74,12 @@ public class Carrito {
 		button_3.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseDown(MouseEvent e) {
-				String usuario = "postgres";
-				String contrasenia = "rc2ijxxz";
-				Conexion a = new Conexion();
-				a.setUsuario(usuario);
-				a.setContrasenia(contrasenia);
-				a.getConnection();
-			
+				try {
+					Carrito_Quitar window = new Carrito_Quitar();
+					window.open();
+				} catch (Exception e1) {
+					e1.printStackTrace();
+				}
 			}
 		});
 		button_3.setBounds(438, 31, 97, 96);

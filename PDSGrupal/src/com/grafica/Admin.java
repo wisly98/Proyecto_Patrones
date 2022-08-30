@@ -1,19 +1,14 @@
 package com.grafica;
 
-import org.eclipse.swt.widgets.Display; 
+import org.eclipse.swt.widgets.Display;  
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.SWT;
-import org.eclipse.swt.widgets.Label;
 import org.eclipse.wb.swt.SWTResourceManager;
-
-import com.proxy.impl.OperacionesProductosCrudProxy;
 
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
-import org.eclipse.swt.widgets.Canvas;
-import org.eclipse.swt.layout.RowLayout;
 import org.eclipse.swt.events.MouseAdapter;
 import org.eclipse.swt.events.MouseEvent;
 
@@ -25,8 +20,6 @@ public class Admin {
 	 */
 	public void open() {
 
-		OperacionesProductosCrudProxy pc = OperacionesProductosCrudProxy.getInstance();
-		
 		Display display = Display.getDefault();
 		Shell shell = new Shell();
 		shell.setSize(634, 431);

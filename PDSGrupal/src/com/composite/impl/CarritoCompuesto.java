@@ -5,17 +5,29 @@ import java.util.stream.Stream;
 
 import com.composite.interfaz.IPrecio;
 import com.crud.pds.Productos;
+import com.proxy.impl.OperacionesProductosCrudProxy;
 
 
-public class Carrito implements IPrecio{
+public class CarritoCompuesto implements IPrecio{
 	
 	private ArrayList<Productos> productos;
+private static CarritoCompuesto instancia;
 	
-	public Carrito() {
+	private CarritoCompuesto() {
 		
+	
 		productos = new ArrayList<Productos>();
-		
-	}
+	   }
+	 
+	    public static CarritoCompuesto getInstance(){
+	       if(instancia == null){
+	   
+	             instancia = new CarritoCompuesto();
+	       }
+	        return instancia;
+	   }
+	
+	
 	
 	public void addProduct(Productos prod) {
 		productos.add(prod);
@@ -42,13 +54,14 @@ public class Carrito implements IPrecio{
 
 	@Override
 	public double getImporteTotal() {
+		
 		Double importeTotal = 0.0;
-
-		for(Productos it : productos) {
-			
-			importeTotal += ((IPrecio) it).getImporteTotal();
-			
+		
+		for(int i = 0; i<productos.size();i++) {
+			importeTotal = importeTotal + (productos.get(i).getCantidad()*productos.get(i).getPrecio());
+			productos.get(i).setTotalProducto(productos.get(i).getCantidad()*productos.get(i).getPrecio());
 		}
+				
 		return importeTotal;
 	}
 

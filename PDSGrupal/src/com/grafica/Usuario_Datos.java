@@ -1,6 +1,6 @@
 package com.grafica;
 
-import org.eclipse.swt.widgets.Display; 
+import org.eclipse.swt.widgets.Display;  
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Composite;
 
@@ -10,8 +10,6 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.wb.swt.SWTResourceManager;
 
-import com.prototype.abs.UsuarioBasico;
-import com.prototype.impl.Usuario;
 import com.proxy.impl.OperacionesUsuariosCrudProxy;
 
 import org.eclipse.swt.widgets.Text;

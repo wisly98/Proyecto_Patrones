@@ -8,6 +8,7 @@ public class Productos {
 	private int cantidad;
 	private double precio;
 	private String fecha_caduca;
+	private double totalProducto;
 	
 	public Productos() {
 		
@@ -88,7 +89,13 @@ public class Productos {
 	public void setFecha_caduca(String fecha_caduca) {
 		this.fecha_caduca = fecha_caduca;
 	}
-	
-	
-	
+
+	public double getTotalProducto() {
+		return totalProducto;
+	}
+
+	public void setTotalProducto(double totalProducto) {
+		this.totalProducto = totalProducto;
+	}
+		
 }
