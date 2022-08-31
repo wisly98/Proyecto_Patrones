@@ -99,6 +99,12 @@ public class Carrito {
 		btnNewButton_1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseDown(MouseEvent e) {
+				try {
+					Carrito_Pagar window = new Carrito_Pagar();
+					window.open();
+				} catch (Exception e3) {
+					e3.printStackTrace();
+				}
 			}
 		});
 		btnNewButton_1.setBounds(261, 253, 97, 96);
