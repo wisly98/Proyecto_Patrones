@@ -5,7 +5,8 @@ public class principalPrueba {
 	public static void main(String[] args) {
 		
 		try {
-			Carrito window = new Carrito();
+			Usuario_IniciaSesion window = new Usuario_IniciaSesion();
+					
 			window.open();
 		} catch (Exception e1) {
 			e1.printStackTrace();
