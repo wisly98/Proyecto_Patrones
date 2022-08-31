@@ -13,13 +13,11 @@ import org.eclipse.wb.swt.SWTResourceManager;
 import org.eclipse.swt.widgets.Label;
 
 public class Inicia {
-
-	/**
-	 * Launch the application.
-	 * @param args
-	 * @wbp.parser.entryPoint
-	 */
-	public static void open() {
+	
+// Inicia el programa .
+	
+	
+	public static void open() { // método para mostrar los componentes en pantalla. 
 		Display display = Display.getDefault();
 		Shell shell = new Shell();
 		shell.setBackground(SWTResourceManager.getColor(0, 255, 255));
@@ -36,7 +34,9 @@ public class Inicia {
 		btn_admin.setVisible(true);
 		btn_admin.addMouseListener(new MouseAdapter() {
 			@Override
-			public void mouseDown(MouseEvent e) {
+			public void mouseDown(MouseEvent e) {  // damos funcionalidad al botón al dar click.
+				
+				// Llama a la ventana para iniciar seción como Administrador.
 				try {
 					Admin_IniciarSesion window = new Admin_IniciarSesion();
 					window.open();
@@ -53,9 +53,9 @@ public class Inicia {
 		btn_usuario.setVisible(true);
 		btn_usuario.addMouseListener(new MouseAdapter() {
 			@Override
-			public void mouseDown(MouseEvent e) {
+			public void mouseDown(MouseEvent e) { // damos funcionalidad al botón al dar click.
 		
-					
+					// Llama a la ventana para iniciar seción como usiario.
 					try {
 						Usuario_IniciaSesion window = new Usuario_IniciaSesion();
 						window.open();

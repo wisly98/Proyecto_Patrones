@@ -35,7 +35,9 @@ public class Usuario_IniciaSesion {
 	 * Open the window.
 	 * @wbp.parser.entryPoint
 	 */
-	public void open() throws SQLException{
+	public void open() throws SQLException{ // método para mostrar los componentes en pantalla.
+		
+		
 		shell.setBackground(SWTResourceManager.getColor(0, 255, 255));
 		shell.setImage(SWTResourceManager.getImage("C:\\Users\\Usuario-PC\\Downloads\\Iconos swt\\kisspng-india-login-computer-icons-emoticon-medicine-user-login-icon-5ab05c8bc2f8d1.4479395815215074677986.jpg"));
 		
@@ -80,7 +82,7 @@ public class Usuario_IniciaSesion {
 		btnConectarse.addKeyListener(new KeyAdapter() {
 			
 			@Override
-			public void keyPressed(KeyEvent e) {
+			public void keyPressed(KeyEvent e) { 
 				
 				try {
 					UsuarioBasico ub = uc.leerUsuario(text_usuario.getText());
@@ -116,7 +118,7 @@ public class Usuario_IniciaSesion {
 		btnCancelar.setBounds(99, 172, 75, 25);
 		btnCancelar.addMouseListener(new MouseAdapter() {
 			@Override
-			public void mouseDown(MouseEvent e) {
+			public void mouseDown(MouseEvent e) { // Funcionalidad para cerrar la ventana al dar click.
 				shell.close();
 			}
 		});
@@ -125,13 +127,21 @@ public class Usuario_IniciaSesion {
 
 		btnConectarse.addMouseListener(new MouseAdapter() {
 			@Override
-			public void mouseDown(MouseEvent e) {
+			public void mouseDown(MouseEvent e) { // Funcionalidad para conectar ala base de datos dando click.
 				
+				
+				//Método para concectarse a la base de datos.
 				
 				try {
 					UsuarioBasico ub = uc.leerUsuario(text_usuario.getText());
+					
+					// valida usuario y contraseña con los que se encuentran registrados en la base de datos.
+					
 					if(text_usuario.getText().equals(ub.getUsuario())&& txt_contrasenia.getText().equals(ub.getContrasenia())) {
-						display.close();
+						display.close(); // Cierra todo el programa.
+						
+						
+						// Abre la ventana carrito.
 						
 						try {
 							Carrito window = new Carrito();
@@ -162,10 +172,10 @@ public class Usuario_IniciaSesion {
 		ocultar.setVisible(false);
 		mostrar.addMouseListener(new MouseAdapter() {
 			@Override
-			public void mouseDown(MouseEvent e) {
+			public void mouseDown(MouseEvent e) { // Botón para mostar  Contraseña.
 				mostrar.setVisible(false);
 				ocultar.setVisible(true);
-				txt_contrasenia.setEchoChar((char)0);
+				txt_contrasenia.setEchoChar((char)0);// paso de (•) a texto.
 			
 			}
 		});
@@ -175,11 +185,11 @@ public class Usuario_IniciaSesion {
 
 		ocultar.addMouseListener(new MouseAdapter() {
 			@Override
-			public void mouseDown(MouseEvent e) {
+			public void mouseDown(MouseEvent e) { //Botón para ocultar la contraseña.
 				mostrar.setVisible(true);
 				ocultar.setVisible(false);
 				txt_contrasenia.setEchoChar((char)0);
-				txt_contrasenia.setEchoChar('•');
+				txt_contrasenia.setEchoChar('•');// paso de texto a (•).
 				
 			}
 		});
@@ -190,7 +200,7 @@ public class Usuario_IniciaSesion {
 		btnCrearCuenta.setFont(SWTResourceManager.getFont("Segoe UI", 10, SWT.NORMAL));
 		btnCrearCuenta.addMouseListener(new MouseAdapter() {
 			@Override
-			public void mouseDown(MouseEvent e) {
+			public void mouseDown(MouseEvent e) { //Método para iniciar registro de usuario al dar click.
 				try {
 					Usuario_Datos window = new Usuario_Datos();
 					window.open();

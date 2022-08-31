@@ -26,7 +26,7 @@ public class Usuario_Datos {
 	private Text text_nombre;
 	private Text text_usuario;
 
-	public void open() {
+	public void open() { // método para mostrar los componentes en pantalla.
 		Display display = Display.getDefault();
 		createContents();
 		shell.open();
@@ -108,7 +108,7 @@ public class Usuario_Datos {
 		Button btnCrear = new Button(composite, SWT.NONE);
 		btnCrear.addMouseListener(new MouseAdapter() {
 			@Override
-			public void mouseDown(MouseEvent e) {
+			public void mouseDown(MouseEvent e) { // Método para crear el usuario al dar click
 			
 			if(text_usuario.getText().equals(null) && text_nombre.equals(null) && text_apellido.getText().equals(null) && text_edad.getText().equals(null) && text_contrasenia.getText().equals(null)) {
 				mensaje.setText("Error al registrar");
@@ -144,7 +144,7 @@ public class Usuario_Datos {
 		Button btnRgresar = new Button(composite, SWT.NONE);
 		btnRgresar.addMouseListener(new MouseAdapter() {
 			@Override
-			public void mouseDown(MouseEvent e) {
+			public void mouseDown(MouseEvent e) { //Método para cerrar la ventana al dar click.
 				shell.close();
 			}
 		});
@@ -158,10 +158,10 @@ public class Usuario_Datos {
 		ocultar.setVisible(false);
 		mostrar.addMouseListener(new MouseAdapter() {
 			@Override
-			public void mouseDown(MouseEvent e) {
+			public void mouseDown(MouseEvent e) { // Método para mostrar la contraseña.
 				mostrar.setVisible(false);
 				ocultar.setVisible(true);
-				text_contrasenia.setEchoChar((char)0);
+				text_contrasenia.setEchoChar((char)0) ;// paso de (•) a texto.
 			
 			}
 		});
@@ -171,11 +171,11 @@ public class Usuario_Datos {
 
 		ocultar.addMouseListener(new MouseAdapter() {
 			@Override
-			public void mouseDown(MouseEvent e) {
+			public void mouseDown(MouseEvent e) { // Método para ocultar la contraseña.
 				mostrar.setVisible(true);
 				ocultar.setVisible(false);
 				text_contrasenia.setEchoChar((char)0);
-				text_contrasenia.setEchoChar('•');
+				text_contrasenia.setEchoChar('•'); // paso de texto a (•).
 				
 			}
 		});

@@ -25,6 +25,7 @@ public class Carrito_Agregar {
 	List<Productos> producto = new ArrayList<Productos>();
 	/**
 	 * Open the window.
+	 * @wbp.parser.entryPoint
 	 */
 	public void open() {
 		OperacionesProductosCrudProxy pc = OperacionesProductosCrudProxy.getInstance();
