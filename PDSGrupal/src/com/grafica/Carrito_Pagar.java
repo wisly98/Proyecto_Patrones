@@ -11,6 +11,7 @@ import org.eclipse.swt.events.MouseAdapter;
 import org.eclipse.swt.events.MouseEvent;
 
 public class Carrito_Pagar {
+	private Label paypal;
 
 	/**
 	 * Launch the application.
@@ -37,15 +38,15 @@ public class Carrito_Pagar {
 		Composite composite = new Composite(shell, SWT.NONE);
 		composite.setBounds(0, 0, 435, 261);
 		
-		Label efectivo = new Label(composite, SWT.NONE);
-		efectivo.addMouseListener(new MouseAdapter() {
+		paypal = new Label(composite, SWT.NONE);
+		paypal.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseDown(MouseEvent e) {
 				
 			}
 		});
-		efectivo.setImage(SWTResourceManager.getImage(Carrito_Pagar.class, "/com/imagenes/paypal.jpg"));
-		efectivo.setBounds(29, 83, 85, 78);
+		paypal.setImage(SWTResourceManager.getImage(Carrito_Pagar.class, "/com/imagenes/paypal.jpg"));
+		paypal.setBounds(29, 83, 85, 78);
 		
 		Label transferencia = new Label(composite, SWT.NONE);
 		transferencia.addMouseListener(new MouseAdapter() {

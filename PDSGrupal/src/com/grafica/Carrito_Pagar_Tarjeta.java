@@ -2,6 +2,10 @@ package com.grafica;
 
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
+import org.eclipse.swt.widgets.Label;
+import org.eclipse.swt.SWT;
+import org.eclipse.wb.swt.SWTResourceManager;
+import org.eclipse.swt.widgets.Composite;
 
 public class Carrito_Pagar_Tarjeta {
 
@@ -26,6 +30,9 @@ public class Carrito_Pagar_Tarjeta {
 		Shell shell = new Shell();
 		shell.setSize(450, 300);
 		shell.setText("SWT Application");
+		
+		Composite composite = new Composite(shell, SWT.NONE);
+		composite.setBounds(0, 0, 435, 262);
 
 		shell.open();
 		shell.layout();
