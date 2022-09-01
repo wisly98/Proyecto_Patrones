@@ -39,10 +39,9 @@ public class Usuario_IniciaSesion {
 		
 		
 		shell.setBackground(SWTResourceManager.getColor(0, 255, 255));
-		shell.setImage(SWTResourceManager.getImage("C:\\Users\\Usuario-PC\\Downloads\\Iconos swt\\kisspng-india-login-computer-icons-emoticon-medicine-user-login-icon-5ab05c8bc2f8d1.4479395815215074677986.jpg"));
-		
+		shell.setImage(SWTResourceManager.getImage(Carrito_Quitar.class, "/com/imagenes/WhatsApp Image 2022-02-19 at 10.30.59.jpeg"));		
 		shell.setSize(411, 244);
-		shell.setText("Iniciar Sesión");
+		shell.setText("Iniciar Sesión Usuario");
 		
 		Conexion.setUsuario(usuario);
 		Conexion.setContrasenia(contrasenia);
@@ -65,20 +64,21 @@ public class Usuario_IniciaSesion {
 		composite.setBounds(0, 0, 396, 207);
 		composite.setLayout(null);
 		
+		Label Mensaje = new Label(composite, SWT.NONE);
+		
+		Mensaje.setBackground(SWTResourceManager.getColor(255, 255, 255));
+		Mensaje.setForeground(SWTResourceManager.getColor(255, 0, 0));
+		Mensaje.setBounds(41, 10, 304, 15);
+		Mensaje.setVisible(false);
+		
 		text_usuario = new Text(composite, SWT.BORDER);
 		text_usuario.setBounds(99, 56, 228, 21);
 		txt_contrasenia = new Text(composite, SWT.SINGLE | SWT.BORDER  | SWT.PASSWORD);
 		txt_contrasenia.setBounds(99, 107, 228, 21);
 		txt_contrasenia.setEchoChar('•');
 		
-		Label Mensaje = new Label(composite, SWT.NONE);
-		Mensaje.setBackground(SWTResourceManager.getColor(255, 255, 255));
-		Mensaje.setForeground(SWTResourceManager.getColor(255, 0, 0));
-		Mensaje.setBounds(116, 10, 195, 15);
-		Mensaje.setVisible(false);
-		
 		Button btnConectarse = new Button(composite, SWT.NONE);
-		btnConectarse.setFont(SWTResourceManager.getFont("Segoe UI", 10, SWT.NORMAL));
+		btnConectarse.setFont(SWTResourceManager.getFont("STIXNonUnicode", 7, SWT.NORMAL));
 		btnConectarse.addKeyListener(new KeyAdapter() {
 			
 			@Override
@@ -111,11 +111,11 @@ public class Usuario_IniciaSesion {
 				
 			}
 		});
-		btnConectarse.setBounds(99, 134, 75, 25);
+		btnConectarse.setBounds(191, 159, 75, 25);
 		
 		Button btnCancelar = new Button(composite, SWT.NONE);
-		btnCancelar.setFont(SWTResourceManager.getFont("Segoe UI", 10, SWT.NORMAL));
-		btnCancelar.setBounds(99, 172, 75, 25);
+		btnCancelar.setFont(SWTResourceManager.getFont("STIXNonUnicode", 7, SWT.NORMAL));
+		btnCancelar.setBounds(99, 159, 75, 25);
 		btnCancelar.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseDown(MouseEvent e) { // Funcionalidad para cerrar la ventana al dar click.
@@ -179,7 +179,7 @@ public class Usuario_IniciaSesion {
 			
 			}
 		});
-		mostrar.setImage(SWTResourceManager.getImage("C:\\Users\\Usuario-PC\\Downloads\\Iconos swt\\6803345 (1).png"));
+		mostrar.setImage(SWTResourceManager.getImage(Usuario_IniciaSesion.class, "/com/imagenes/mostrarC.png"));
 		mostrar.setBounds(333, 107, 33, 21);
 		
 
@@ -193,11 +193,11 @@ public class Usuario_IniciaSesion {
 				
 			}
 		});
-		ocultar.setImage(SWTResourceManager.getImage("C:\\Users\\Usuario-PC\\Downloads\\Iconos swt\\6803345 (2).png"));
+		ocultar.setImage(SWTResourceManager.getImage(Usuario_IniciaSesion.class, "/com/imagenes/ocultarC.png"));
 		ocultar.setBounds(333, 107, 33, 21);
 		
 		Button btnCrearCuenta = new Button(composite, SWT.NONE);
-		btnCrearCuenta.setFont(SWTResourceManager.getFont("Segoe UI", 10, SWT.NORMAL));
+		btnCrearCuenta.setFont(SWTResourceManager.getFont("STIXNonUnicode", 7, SWT.NORMAL));
 		btnCrearCuenta.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseDown(MouseEvent e) { //Método para iniciar registro de usuario al dar click.
@@ -210,19 +210,28 @@ public class Usuario_IniciaSesion {
 			}
 		});
 		
-		btnCrearCuenta.setBounds(275, 172, 91, 25);
+		btnCrearCuenta.setBounds(284, 159, 91, 25);
 		btnCrearCuenta.setText("Crear usuario");
 		
 		Label lblUsuario = new Label(composite, SWT.NONE);
-		lblUsuario.setAlignment(SWT.RIGHT);
-		lblUsuario.setFont(SWTResourceManager.getFont("Segoe UI", 10, SWT.NORMAL));
+		lblUsuario.setAlignment(SWT.CENTER);
+		lblUsuario.setFont(SWTResourceManager.getFont("STIXNonUnicode", 6, SWT.BOLD));
 		lblUsuario.setBounds(20, 57, 55, 15);
 		lblUsuario.setText("Usuario");
 		
 		Label lblContrasea = new Label(composite, SWT.NONE);
-		lblContrasea.setFont(SWTResourceManager.getFont("Segoe UI", 10, SWT.NORMAL));
-		lblContrasea.setBounds(10, 107, 65, 15);
+		lblContrasea.setAlignment(SWT.CENTER);
+		lblContrasea.setFont(SWTResourceManager.getFont("STIXNonUnicode", 6, SWT.BOLD));
+		lblContrasea.setBounds(10, 107, 83, 15);
 		lblContrasea.setText("Contrase\u00F1a");
+		
+		Label lblNewLabel = new Label(composite, SWT.NONE);
+		lblNewLabel.setImage(SWTResourceManager.getImage(Usuario_IniciaSesion.class, "/com/imagenes/daa6550f1247a73508c5560300d9d697.jpg"));
+		lblNewLabel.setBounds(0, 0, 396, 50);
+		
+		Label lblNewLabel_1 = new Label(composite, SWT.NONE);
+		lblNewLabel_1.setImage(SWTResourceManager.getImage(Usuario_IniciaSesion.class, "/com/imagenes/daa6550f1247a73508c5560300d9d697.jpg"));
+		lblNewLabel_1.setBounds(0, 148, 396, 59);
 		
 		
 	}

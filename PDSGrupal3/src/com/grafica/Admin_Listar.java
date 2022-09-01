@@ -34,10 +34,13 @@ public class Admin_Listar {
 		Display display = Display.getDefault();
 		Shell shell = new Shell();
 		shell.setSize(617, 362);
-		shell.setText("SWT Application");
+		shell.setText("Plaza la Merced");
+		shell.setImage(SWTResourceManager.getImage(Carrito_Quitar.class, "/com/imagenes/WhatsApp Image 2022-02-19 at 10.30.59.jpeg"));
+
 		
 		Composite composite = new Composite(shell, SWT.NONE);
 		composite.setBounds(0, 0, 601, 324);
+		composite.setBackground(SWTResourceManager.getColor(255, 255, 224));
 		
 		Button btnRegresar = new Button(composite, SWT.NONE);
 		btnRegresar.setFont(SWTResourceManager.getFont("Segoe UI", 10, SWT.NORMAL));

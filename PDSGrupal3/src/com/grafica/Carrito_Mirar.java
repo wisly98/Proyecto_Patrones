@@ -34,10 +34,12 @@ public class Carrito_Mirar {
 		Display display = Display.getDefault();
 		Shell shell = new Shell();
 		shell.setSize(516, 420);
-		shell.setText("SWT Application");
+		shell.setText("Plaza la Merced");
+		shell.setImage(SWTResourceManager.getImage(Carrito_Quitar.class, "/com/imagenes/WhatsApp Image 2022-02-19 at 10.30.59.jpeg"));
 		
 		Composite composite = new Composite(shell, SWT.NONE);
 		composite.setBounds(0, 0, 500, 382);
+		composite.setBackground(SWTResourceManager.getColor(255, 255, 224));
 		
 		Button btnRegresar = new Button(composite, SWT.NONE);
 		btnRegresar.setFont(SWTResourceManager.getFont("Segoe UI", 10, SWT.NORMAL));
@@ -77,19 +79,24 @@ public class Carrito_Mirar {
 		
 		Label total = new Label(composite, SWT.NONE);
 		total.setFont(SWTResourceManager.getFont("Segoe UI", 10, SWT.NORMAL));
+		total.setBackground(SWTResourceManager.getColor(255, 255, 224));
 		total.setBounds(417, 302, 55, 15);
 		
 		Label lblTotalAPagar = new Label(composite, SWT.NONE);
 		lblTotalAPagar.setFont(SWTResourceManager.getFont("Segoe UI", 10, SWT.NORMAL));
 		lblTotalAPagar.setBounds(298, 302, 81, 25);
+		lblTotalAPagar.setBackground(SWTResourceManager.getColor(255, 255, 224));
 		lblTotalAPagar.setText("Total a pagar:");
+		
 		
 		Label label = new Label(composite, SWT.NONE);
 		label.setAlignment(SWT.RIGHT);
 		label.setBounds(385, 302, 26, 15);
+		label.setBackground(SWTResourceManager.getColor(255, 255, 224));
 		label.setText("$");
 		
 		TableItem tableItem; 
+	
 		List<TableItem> filas = new ArrayList<TableItem>();
 		List<Productos> a = pc.getProductos();
 		
@@ -126,6 +133,7 @@ public class Carrito_Mirar {
 			total.setText(String.valueOf(String.format("%.2f",pc.getImporteTotal())));
 			
 		}
+	
 		
 
 		shell.open();  

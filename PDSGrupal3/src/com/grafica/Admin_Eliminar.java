@@ -31,10 +31,13 @@ public class Admin_Eliminar {
 		Display display = Display.getDefault();
 		Shell shell = new Shell();
 		shell.setSize(450, 331);
-		shell.setText("SWT Application");
+		shell.setText("Plaza la Merced");
+		shell.setImage(SWTResourceManager.getImage(Carrito_Quitar.class, "/com/imagenes/WhatsApp Image 2022-02-19 at 10.30.59.jpeg"));
+		
 		
 		Composite composite = new Composite(shell, SWT.NONE);
 		composite.setBounds(0, 0, 435, 292);
+		composite.setBackground(SWTResourceManager.getColor(255, 255, 224));
 		
 		Label label_mensaje = new Label(composite, SWT.NONE);
 		label_mensaje.setFont(SWTResourceManager.getFont("Segoe UI", 10, SWT.NORMAL));
@@ -43,9 +46,10 @@ public class Admin_Eliminar {
 		label_mensaje.setBounds(99, 87, 234, 15);
 		
 		Label lblIngreseElId = new Label(composite, SWT.NONE);
-		lblIngreseElId.setFont(SWTResourceManager.getFont("Segoe UI", 10, SWT.NORMAL));
+		lblIngreseElId.setFont(SWTResourceManager.getFont("STIXNonUnicode", 7, SWT.NORMAL));
 		lblIngreseElId.setBounds(10, 10, 290, 17);
 		lblIngreseElId.setText("Ingrese el ID del producto que desea eliminar:");
+		lblIngreseElId.setBackground(SWTResourceManager.getColor(255, 255, 224));
 		
 		text_id = new Text(composite, SWT.BORDER | SWT.CENTER);
 		text_id.setFont(SWTResourceManager.getFont("Segoe UI", 10, SWT.NORMAL));
@@ -56,35 +60,42 @@ public class Admin_Eliminar {
 		obten_id.setFont(SWTResourceManager.getFont("Segoe UI", 10, SWT.NORMAL));
 		obten_id.setAlignment(SWT.CENTER);
 		obten_id.setBounds(109, 108, 203, 15);
+		obten_id.setBackground(SWTResourceManager.getColor(255, 255, 224));
 		
 		Label obten_nombre = new Label(composite, SWT.NONE);
 		obten_nombre.setFont(SWTResourceManager.getFont("Segoe UI", 10, SWT.NORMAL));
 		obten_nombre.setAlignment(SWT.CENTER);
 		obten_nombre.setBounds(109, 129, 203, 15);
+		obten_nombre.setBackground(SWTResourceManager.getColor(255, 255, 224));
 		
 		Label obten_descr = new Label(composite, SWT.NONE);
 		obten_descr.setFont(SWTResourceManager.getFont("Segoe UI", 10, SWT.NORMAL));
 		obten_descr.setAlignment(SWT.CENTER);
 		obten_descr.setBounds(109, 150, 203, 15);
+		obten_descr.setBackground(SWTResourceManager.getColor(255, 255, 224));
 		
 		Label obten_cantidad = new Label(composite, SWT.NONE);
 		obten_cantidad.setFont(SWTResourceManager.getFont("Segoe UI", 10, SWT.NORMAL));
 		obten_cantidad.setAlignment(SWT.CENTER);
 		obten_cantidad.setBounds(109, 170, 203, 15);
+		obten_cantidad.setBackground(SWTResourceManager.getColor(255, 255, 224));
 		
 		Label obten_precio = new Label(composite, SWT.NONE);
 		obten_precio.setFont(SWTResourceManager.getFont("Segoe UI", 10, SWT.NORMAL));
 		obten_precio.setAlignment(SWT.CENTER);
 		obten_precio.setBounds(109, 191, 203, 15);
+		obten_precio.setBackground(SWTResourceManager.getColor(255, 255, 224));
 		
 		Label obten_expira = new Label(composite, SWT.NONE);
 		obten_expira.setFont(SWTResourceManager.getFont("Segoe UI", 10, SWT.NORMAL));
 		obten_expira.setAlignment(SWT.CENTER);
 		obten_expira.setBounds(109, 212, 203, 15);
+		obten_expira.setBackground(SWTResourceManager.getColor(255, 255, 224));
 		
 		Label eliminado = new Label(composite, SWT.NONE);
 		eliminado.setForeground(SWTResourceManager.getColor(255, 0, 0));
 		eliminado.setBounds(165, 236, 135, 15);
+		eliminado.setBackground(SWTResourceManager.getColor(255, 255, 224));
 									
 		Button btnBuscar = new Button(composite, SWT.NONE);
 		btnBuscar.setFont(SWTResourceManager.getFont("Segoe UI", 10, SWT.NORMAL));
@@ -119,30 +130,35 @@ public class Admin_Eliminar {
 		btnBuscar.setText("Buscar");
 		
 		Label lblId = new Label(composite, SWT.NONE);
-		lblId.setFont(SWTResourceManager.getFont("Segoe UI", 10, SWT.NORMAL));
+		lblId.setFont(SWTResourceManager.getFont("STIXNonUnicode", 6, SWT.BOLD));
 		lblId.setBounds(10, 108, 55, 15);
 		lblId.setText("Id:");
+		lblId.setBackground(SWTResourceManager.getColor(255, 255, 224));
+		lblId.setBackground(SWTResourceManager.getColor(255, 255, 224));
 		
 		Label lblNombre = new Label(composite, SWT.NONE);
-		lblNombre.setFont(SWTResourceManager.getFont("Segoe UI", 10, SWT.NORMAL));
+		lblNombre.setFont(SWTResourceManager.getFont("STIXNonUnicode", 6, SWT.BOLD));
 		lblNombre.setBounds(10, 129, 55, 15);
 		lblNombre.setText("Nombre:");
+		lblNombre.setBackground(SWTResourceManager.getColor(255, 255, 224));
 		
 		Label lblDescripcin = new Label(composite, SWT.NONE);
-		lblDescripcin.setFont(SWTResourceManager.getFont("Segoe UI", 10, SWT.NORMAL));
-		lblDescripcin.setBounds(10, 150, 75, 15);
+		lblDescripcin.setFont(SWTResourceManager.getFont("STIXNonUnicode", 6, SWT.BOLD));
+		lblDescripcin.setBounds(10, 150, 93, 15);
 		lblDescripcin.setText("Descripci\u00F3n:");
+		lblDescripcin.setBackground(SWTResourceManager.getColor(255, 255, 224));
 		
 		Label lblCantidad = new Label(composite, SWT.NONE);
-		lblCantidad.setFont(SWTResourceManager.getFont("Segoe UI", 10, SWT.NORMAL));
+		lblCantidad.setFont(SWTResourceManager.getFont("STIXNonUnicode", 6, SWT.BOLD));
 		lblCantidad.setBounds(10, 170, 55, 15);
 		lblCantidad.setText("Cantidad:");
+		lblCantidad.setBackground(SWTResourceManager.getColor(255, 255, 224));
 		
 		Label lblPrecio = new Label(composite, SWT.NONE);
-		lblPrecio.setFont(SWTResourceManager.getFont("Segoe UI", 10, SWT.NORMAL));
+		lblPrecio.setFont(SWTResourceManager.getFont("STIXNonUnicode", 6, SWT.BOLD));
 		lblPrecio.setBounds(10, 191, 55, 15);
 		lblPrecio.setText("Precio:");
-		
+		lblPrecio.setBackground(SWTResourceManager.getColor(255, 255, 224));
 
 		Button btnBorrar = new Button(composite, SWT.NONE);
 		btnBorrar.setFont(SWTResourceManager.getFont("Segoe UI", 10, SWT.NORMAL));
@@ -181,10 +197,10 @@ public class Admin_Eliminar {
 		btnCancelar.setText("Regresar");
 		
 		Label lblExpira = new Label(composite, SWT.NONE);
-		lblExpira.setFont(SWTResourceManager.getFont("Segoe UI", 10, SWT.NORMAL));
+		lblExpira.setFont(SWTResourceManager.getFont("STIXNonUnicode", 6, SWT.BOLD));
 		lblExpira.setText("Expira:");
 		lblExpira.setBounds(10, 212, 55, 15);
-		
+		lblExpira.setBackground(SWTResourceManager.getColor(255, 255, 224));
 		
 		shell.open();
 		shell.layout();

@@ -14,4 +14,31 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>src/com/imagenes/MicrosoftTeams-image (2).png</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/Downloads/MicrosoftTeams-image%20(2).png</locationURI>
+		</link>
+		<link>
+			<name>src/com/imagenes/WhatsApp Image 2022-02-19 at 10.30.59.jpeg</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/OneDrive%20-%20Universidad%20Central%20del%20Ecuador/Im%C3%A1genes/Saved%20Pictures/WhatsApp%20Image%202022-02-19%20at%2010.30.59.jpeg</locationURI>
+		</link>
+		<link>
+			<name>src/com/imagenes/daa6550f1247a73508c5560300d9d697.jpg</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/OneDrive%20-%20Universidad%20Central%20del%20Ecuador/Im%C3%A1genes/Saved%20Pictures/daa6550f1247a73508c5560300d9d697.jpg</locationURI>
+		</link>
+		<link>
+			<name>src/com/imagenes/mostrarC.png</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/OneDrive%20-%20Universidad%20Central%20del%20Ecuador/Im%C3%A1genes/Saved%20Pictures/mostrarC.png</locationURI>
+		</link>
+		<link>
+			<name>src/com/imagenes/ocultarC.png</name>
+			<type>1</type>
+			<locationURI>PARENT-3-PROJECT_LOC/OneDrive%20-%20Universidad%20Central%20del%20Ecuador/Im%C3%A1genes/Saved%20Pictures/ocultarC.png</locationURI>
+		</link>
+	</linkedResources>
 </projectDescription>

@@ -32,9 +32,11 @@ public class Carrito_Pagar {
 		Display display = Display.getDefault();
 		Shell shell = new Shell();
 		shell.setSize(450, 300);
-		shell.setText("SWT Application");
+		shell.setImage(SWTResourceManager.getImage(Carrito_Quitar.class, "/com/imagenes/WhatsApp Image 2022-02-19 at 10.30.59.jpeg"));
+		shell.setText("Plaza la Merced");
 		
 		Composite composite = new Composite(shell, SWT.NONE);
+		composite.setBackground(SWTResourceManager.getColor(255, 255, 224));
 		composite.setBounds(0, 0, 435, 261);
 		
 		Button btnRegresar = new Button(composite, SWT.NONE);
@@ -44,7 +46,7 @@ public class Carrito_Pagar {
 				shell.close();
 			}
 		});
-		btnRegresar.setFont(SWTResourceManager.getFont("Segoe UI", 10, SWT.NORMAL));
+		btnRegresar.setFont(SWTResourceManager.getFont("STIXNonUnicode", 6, SWT.BOLD));
 		btnRegresar.setBounds(173, 214, 75, 25);
 		btnRegresar.setText("Regresar");
 		

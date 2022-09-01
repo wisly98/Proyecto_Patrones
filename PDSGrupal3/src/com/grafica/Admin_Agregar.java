@@ -36,46 +36,54 @@ public class Admin_Agregar {
 		Display display = Display.getDefault();
 		Shell shell = new Shell();
 		shell.setSize(348, 300);
-		shell.setText("SWT Application");
+		shell.setText("Plaza la Merced");
+		shell.setImage(SWTResourceManager.getImage(Carrito_Quitar.class, "/com/imagenes/WhatsApp Image 2022-02-19 at 10.30.59.jpeg"));
 		
 		Composite composite = new Composite(shell, SWT.NONE);
 		composite.setBounds(0, 0, 332, 260);
+		composite.setBackground(SWTResourceManager.getColor(255, 255, 224));
 		
 		Label lbl_pedirdatos = new Label(composite, SWT.NONE);
-		lbl_pedirdatos.setFont(SWTResourceManager.getFont("Segoe UI", 10, SWT.NORMAL));
+		lbl_pedirdatos.setFont(SWTResourceManager.getFont("STIXNonUnicode", 7, SWT.NORMAL));
 		lbl_pedirdatos.setAlignment(SWT.CENTER);
-		lbl_pedirdatos.setBounds(119, 9, 203, 18);
+		lbl_pedirdatos.setBounds(32, 6, 203, 18);
 		lbl_pedirdatos.setText("Ingrese los siguientes datos");
+		lbl_pedirdatos.setBackground(SWTResourceManager.getColor(255, 255, 224));
 		
 		Label lblNombreProducto = new Label(composite, SWT.NONE);
 		lblNombreProducto.setAlignment(SWT.RIGHT);
-		lblNombreProducto.setFont(SWTResourceManager.getFont("Segoe UI", 10, SWT.NORMAL));
+		lblNombreProducto.setFont(SWTResourceManager.getFont("STIXNonUnicode", 6, SWT.BOLD));
 		lblNombreProducto.setBounds(10, 58, 124, 15);
 		lblNombreProducto.setText("Nombre producto:");
+		lblNombreProducto.setBackground(SWTResourceManager.getColor(255, 255, 224));
 		
 		Label lblDescripcinProducto = new Label(composite, SWT.NONE);
 		lblDescripcinProducto.setAlignment(SWT.RIGHT);
-		lblDescripcinProducto.setFont(SWTResourceManager.getFont("Segoe UI", 10, SWT.NORMAL));
+		lblDescripcinProducto.setFont(SWTResourceManager.getFont("STIXNonUnicode", 6, SWT.BOLD));
 		lblDescripcinProducto.setBounds(10, 79, 135, 15);
-		lblDescripcinProducto.setText("Descripci\u00F3n producto:");
+		lblDescripcinProducto.setText("Descripci\u00F3n:");
+		lblDescripcinProducto.setBackground(SWTResourceManager.getColor(255, 255, 224));
 		
 		Label lblNewLabel_1 = new Label(composite, SWT.NONE);
 		lblNewLabel_1.setAlignment(SWT.RIGHT);
-		lblNewLabel_1.setFont(SWTResourceManager.getFont("Segoe UI", 10, SWT.NORMAL));
+		lblNewLabel_1.setFont(SWTResourceManager.getFont("STIXNonUnicode", 6, SWT.BOLD));
 		lblNewLabel_1.setBounds(10, 103, 124, 15);
 		lblNewLabel_1.setText("Cantidad producto:");
+		lblNewLabel_1.setBackground(SWTResourceManager.getColor(255, 255, 224));
 		
 		Label lblNewLabel_2 = new Label(composite, SWT.NONE);
 		lblNewLabel_2.setAlignment(SWT.RIGHT);
-		lblNewLabel_2.setFont(SWTResourceManager.getFont("Segoe UI", 10, SWT.NORMAL));
+		lblNewLabel_2.setFont(SWTResourceManager.getFont("STIXNonUnicode", 6, SWT.BOLD));
 		lblNewLabel_2.setBounds(10, 125, 124, 15);
 		lblNewLabel_2.setText("Precio producto:");
+		lblNewLabel_2.setBackground(SWTResourceManager.getColor(255, 255, 224));
 		
 		Label lblFechaVencimiento = new Label(composite, SWT.NONE);
 		lblFechaVencimiento.setAlignment(SWT.RIGHT);
-		lblFechaVencimiento.setFont(SWTResourceManager.getFont("Segoe UI", 10, SWT.NORMAL));
+		lblFechaVencimiento.setFont(SWTResourceManager.getFont("STIXNonUnicode", 6, SWT.BOLD));
 		lblFechaVencimiento.setBounds(10, 148, 124, 15);
 		lblFechaVencimiento.setText("Expira:");
+		lblFechaVencimiento.setBackground(SWTResourceManager.getColor(255, 255, 224));
 		
 		text_nombre_p = new Text(composite, SWT.BORDER);
 		text_nombre_p.setFont(SWTResourceManager.getFont("Segoe UI", 10, SWT.NORMAL));
@@ -104,6 +112,7 @@ public class Admin_Agregar {
 		Label message = new Label(composite, SWT.NONE);
 		message.setForeground(SWTResourceManager.getColor(255, 0, 0));
 		message.setBounds(10, 201, 184, 25);
+		message.setBackground(SWTResourceManager.getColor(255, 255, 224));
 
 		
 		Button btnAgregar = new Button(composite, SWT.NONE);
@@ -143,7 +152,7 @@ public class Admin_Agregar {
 				}
 			}
 		});
-		btnAgregar.setBounds(200, 196, 75, 25);
+		btnAgregar.setBounds(227, 196, 75, 25);
 		btnAgregar.setText("Agregar");
 		
 		Button btnCancelar = new Button(composite, SWT.NONE);
@@ -154,14 +163,15 @@ public class Admin_Agregar {
 				
 			}
 		});
-		btnCancelar.setBounds(200, 227, 75, 25);
+		btnCancelar.setBounds(227, 227, 75, 25);
 		btnCancelar.setText("Regresar");
 		
 		Label lblIdProducto = new Label(composite, SWT.NONE);
 		lblIdProducto.setAlignment(SWT.RIGHT);
-		lblIdProducto.setFont(SWTResourceManager.getFont("Segoe UI", 10, SWT.NORMAL));
+		lblIdProducto.setFont(SWTResourceManager.getFont("STIXNonUnicode", 6, SWT.BOLD));
 		lblIdProducto.setText("ID producto:");
 		lblIdProducto.setBounds(10, 37, 124, 15);
+		lblIdProducto.setBackground(SWTResourceManager.getColor(255, 255, 224));
 		
 		
 		shell.open();

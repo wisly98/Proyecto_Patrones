@@ -23,14 +23,21 @@ public class Admin {
 		Display display = Display.getDefault();
 		Shell shell = new Shell();
 		shell.setSize(634, 431);
-		shell.setText("SWT Application");
+		shell.setText("Plaza la Merced");
+		shell.setImage(SWTResourceManager.getImage(Carrito_Quitar.class, "/com/imagenes/WhatsApp Image 2022-02-19 at 10.30.59.jpeg"));
 		
 		Composite composite = new Composite(shell, SWT.NONE);
 		composite.setBackground(SWTResourceManager.getColor(255, 255, 255));
+		composite.setBackground(SWTResourceManager.getColor(255, 255, 224));
 		composite.setBounds(0, 0, 618, 393);
 		composite.setLayout(null);
 		
 		Button buscar = new Button(composite, SWT.NONE);
+		buscar.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+			}
+		});
 		buscar.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseDown(MouseEvent e) {
@@ -44,8 +51,9 @@ public class Admin {
 				
 			}
 		});
-		buscar.setImage(SWTResourceManager.getImage("C:\\Users\\Usuario-PC\\Downloads\\Iconos swt\\2622200.png"));
+		buscar.setImage(SWTResourceManager.getImage(Admin.class, "/com/imagenes/MicrosoftTeams-image (6).png"));
 		buscar.setBounds(78, 31, 97, 96);
+		buscar.setBackground(SWTResourceManager.getColor(255, 255, 224));
 		
 		Button crear = new Button(composite, SWT.NONE);
 		crear.addMouseListener(new MouseAdapter() {
@@ -59,8 +67,9 @@ public class Admin {
 				}
 			}
 		});
-		crear.setImage(SWTResourceManager.getImage("C:\\Users\\Usuario-PC\\Downloads\\Iconos swt\\3658756.png"));
+		crear.setImage(SWTResourceManager.getImage(Admin.class, "/com/imagenes/MicrosoftTeams-image (5).png"));
 		crear.setBounds(261, 31, 97, 96);
+		crear.setBackground(SWTResourceManager.getColor(255, 255, 224));
 		
 		Button actualizar = new Button(composite, SWT.NONE);
 		actualizar.addMouseListener(new MouseAdapter() {
@@ -74,8 +83,9 @@ public class Admin {
 				}
 			}
 		});
-		actualizar.setImage(SWTResourceManager.getImage("C:\\Users\\Usuario-PC\\Downloads\\Iconos swt\\kisspng-cloud-computing-computer-icons-amazon-s3-service-update-button-5ac457835ba728.2678378615228168993754.png"));
+		actualizar.setImage(SWTResourceManager.getImage(Admin.class, "/com/imagenes/MicrosoftTeams-image (3).png"));
 		actualizar.setBounds(438, 31, 97, 96);
+		actualizar.setBackground(SWTResourceManager.getColor(255, 255, 224));
 		
 		Button lista = new Button(composite, SWT.NONE);
 		lista.addSelectionListener(new SelectionAdapter() {
@@ -89,8 +99,9 @@ public class Admin {
 				}
 			}
 		});
-		lista.setImage(SWTResourceManager.getImage("C:\\Users\\Usuario-PC\\Downloads\\Iconos swt\\767ca771755f4675d4063c03e17c8595-icono-de-lista-de-verificacion-medica.png"));
+		lista.setImage(SWTResourceManager.getImage(Admin.class, "/com/imagenes/MicrosoftTeams-image (2).png"));
 		lista.setBounds(78, 253, 97, 96);
+		lista.setBackground(SWTResourceManager.getColor(255, 255, 224));
 		
 		Button eliminar = new Button(composite, SWT.NONE);
 		eliminar.addMouseListener(new MouseAdapter() {
@@ -104,8 +115,9 @@ public class Admin {
 				}
 			}
 		});
-		eliminar.setImage(SWTResourceManager.getImage("C:\\Users\\Usuario-PC\\Downloads\\Iconos swt\\MicrosoftTeams-image (1).png"));
+		eliminar.setImage(SWTResourceManager.getImage(Admin.class, "/com/imagenes/MicrosoftTeams-image (4).png"));
 		eliminar.setBounds(261, 253, 97, 96);
+		eliminar.setBackground(SWTResourceManager.getColor(255, 255, 224));
 		
 		Button salir = new Button(composite, SWT.NONE);
 		salir.addMouseListener(new MouseAdapter() {
@@ -116,8 +128,9 @@ public class Admin {
 			
 			}
 		});
-		salir.setImage(SWTResourceManager.getImage("C:\\Users\\Usuario-PC\\Downloads\\Iconos swt\\logout-png-2.png"));
+		salir.setImage(SWTResourceManager.getImage(Admin.class, "/com/imagenes/MicrosoftTeams-image (7).png"));
 		salir.setBounds(438, 253, 97, 96);
+		salir.setBackground(SWTResourceManager.getColor(255, 255, 224));
 
 		shell.open();
 		shell.layout();

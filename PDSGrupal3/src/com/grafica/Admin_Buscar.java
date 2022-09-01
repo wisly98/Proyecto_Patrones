@@ -28,8 +28,9 @@ public class Admin_Buscar {
 		Display display = Display.getDefault();
 		Shell shell = new Shell();
 		shell.setSize(450, 300);
-		shell.setText("SWT Application");
+		shell.setText("Plaza la Merced");
 		shell.setLayout(null);
+		shell.setImage(SWTResourceManager.getImage(Carrito_Quitar.class, "/com/imagenes/WhatsApp Image 2022-02-19 at 10.30.59.jpeg"));
 		
 		Composite composite = new Composite(shell, SWT.NONE);
 		composite.setBounds(0, 0, 435, 261);

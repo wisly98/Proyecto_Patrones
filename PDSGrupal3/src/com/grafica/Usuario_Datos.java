@@ -40,6 +40,7 @@ public class Usuario_Datos {
 
 	/**
 	 * Create contents of the window.
+	 * @wbp.parser.entryPoint
 	 */
 	protected void createContents() {
 		OperacionesUsuariosCrudProxy pc = OperacionesUsuariosCrudProxy.getInstance();
@@ -52,34 +53,37 @@ public class Usuario_Datos {
 		composite.setBounds(0, 0, 324, 285);
 		
 		Label lblIngreseLosSiguientes = new Label(composite, SWT.NONE);
-		lblIngreseLosSiguientes.setFont(SWTResourceManager.getFont("Segoe UI", 12, SWT.NORMAL));
-		lblIngreseLosSiguientes.setBounds(59, 10, 197, 26);
-		lblIngreseLosSiguientes.setText("Ingrese los siguientes datos");
+		//lblIngreseLosSiguientes.setBackground(SWTResourceManager.getColor(25, 25, 112));
+		//lblIngreseLosSiguientes.setForeground(SWTResourceManager.getColor(255, 255, 255));
+		lblIngreseLosSiguientes.setImage(SWTResourceManager.getImage(Usuario_Datos.class, "/com/imagenes/daa6550f1247a73508c5560300d9d697.jpg"));
+		lblIngreseLosSiguientes.setFont(SWTResourceManager.getFont("STIXNonUnicode", 6, SWT.BOLD));
+		lblIngreseLosSiguientes.setBounds(26, 10, 263, 26);
+		lblIngreseLosSiguientes.setText("INGRESE DATOS CORRESPONDIENTES");
 		
 		Label lblUsuario = new Label(composite, SWT.NONE);
-		lblUsuario.setFont(SWTResourceManager.getFont("Segoe UI", 10, SWT.NORMAL));
+		lblUsuario.setFont(SWTResourceManager.getFont("STIXNonUnicode", 6, SWT.BOLD));
 		lblUsuario.setBounds(10, 54, 55, 15);
 		lblUsuario.setText("Usuario");
 		
 		Label lblNomre = new Label(composite, SWT.NONE);
 		lblNomre.setText("Nombre");
-		lblNomre.setFont(SWTResourceManager.getFont("Segoe UI", 10, SWT.NORMAL));
+		lblNomre.setFont(SWTResourceManager.getFont("STIXNonUnicode", 6, SWT.BOLD));
 		lblNomre.setBounds(10, 85, 55, 15);
 		
 		Label lblApellido = new Label(composite, SWT.NONE);
 		lblApellido.setText("Apellido");
-		lblApellido.setFont(SWTResourceManager.getFont("Segoe UI", 10, SWT.NORMAL));
+		lblApellido.setFont(SWTResourceManager.getFont("STIXNonUnicode", 6, SWT.BOLD));
 		lblApellido.setBounds(10, 113, 55, 15);
 		
 		Label lblEdad = new Label(composite, SWT.NONE);
 		lblEdad.setText("Edad");
-		lblEdad.setFont(SWTResourceManager.getFont("Segoe UI", 10, SWT.NORMAL));
-		lblEdad.setBounds(10, 142, 55, 15);
+		lblEdad.setFont(SWTResourceManager.getFont("STIXNonUnicode", 6, SWT.BOLD));
+		lblEdad.setBounds(10, 147, 55, 15);
 		
 		Label lblContrasea = new Label(composite, SWT.NONE);
 		lblContrasea.setText("Contrase\u00F1a");
-		lblContrasea.setFont(SWTResourceManager.getFont("Segoe UI", 10, SWT.NORMAL));
-		lblContrasea.setBounds(10, 172, 72, 15);
+		lblContrasea.setFont(SWTResourceManager.getFont("STIXNonUnicode", 6, SWT.BOLD));
+		lblContrasea.setBounds(10, 177, 72, 15);
 		
 		text_contrasenia = new Text(composite, SWT.BORDER | SWT.PASSWORD);
 		text_contrasenia.setFont(SWTResourceManager.getFont("Segoe UI", 10, SWT.NORMAL));
@@ -137,8 +141,8 @@ public class Usuario_Datos {
 				
 			}
 		});
-		btnCrear.setFont(SWTResourceManager.getFont("Segoe UI", 10, SWT.NORMAL));
-		btnCrear.setBounds(91, 236, 75, 25);
+		btnCrear.setFont(SWTResourceManager.getFont("STIXNonUnicode", 6, SWT.BOLD));
+		btnCrear.setBounds(126, 236, 75, 25);
 		btnCrear.setText("Crear");
 		
 		Button btnRgresar = new Button(composite, SWT.NONE);
@@ -149,8 +153,8 @@ public class Usuario_Datos {
 			}
 		});
 				
-		btnRgresar.setFont(SWTResourceManager.getFont("Segoe UI", 10, SWT.NORMAL));
-		btnRgresar.setBounds(181, 236, 75, 25);
+		btnRgresar.setFont(SWTResourceManager.getFont("STIXNonUnicode", 6, SWT.BOLD));
+		btnRgresar.setBounds(214, 236, 75, 25);
 		btnRgresar.setText("Regresar");
 		
 		Button mostrar = new Button(composite, SWT.NONE);
@@ -165,8 +169,8 @@ public class Usuario_Datos {
 			
 			}
 		});
-		mostrar.setImage(SWTResourceManager.getImage("C:\\Users\\Usuario-PC\\Downloads\\Iconos swt\\6803345 (1).png"));
-		mostrar.setBounds(262, 171, 33, 21);
+		mostrar.setImage(SWTResourceManager.getImage(Usuario_Datos.class, "/com/imagenes/mostrarC.png"));
+		mostrar.setBounds(262, 171, 27, 21);
 		
 
 		ocultar.addMouseListener(new MouseAdapter() {
@@ -179,8 +183,12 @@ public class Usuario_Datos {
 				
 			}
 		});
-		ocultar.setImage(SWTResourceManager.getImage("C:\\Users\\Usuario-PC\\Downloads\\Iconos swt\\6803345 (2).png"));
-		ocultar.setBounds(262, 171, 33, 21);
+		ocultar.setImage(SWTResourceManager.getImage(Usuario_Datos.class, "/com/imagenes/ocultarC.png"));
+		ocultar.setBounds(262, 171, 27, 21);
+		
+		Label lblNewLabel_1 = new Label(composite, SWT.NONE);
+		lblNewLabel_1.setImage(SWTResourceManager.getImage(Usuario_Datos.class, "/com/imagenes/daa6550f1247a73508c5560300d9d697.jpg"));
+		lblNewLabel_1.setBounds(0, 220, 324, 65);
 		
 
 	}

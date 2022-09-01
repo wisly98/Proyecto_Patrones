@@ -29,20 +29,24 @@ public class Carrito_Quitar {
 	public void open() {
 		Display display = Display.getDefault();
 		Shell shell = new Shell();
+		shell.setImage(SWTResourceManager.getImage(Carrito_Quitar.class, "/com/imagenes/WhatsApp Image 2022-02-19 at 10.30.59.jpeg"));
 		shell.setSize(450, 331);
-		shell.setText("SWT Application");
+		shell.setText("Plaza la Merced");
 		
 		Composite composite = new Composite(shell, SWT.NONE);
+		composite.setBackground(SWTResourceManager.getColor(255, 255, 224));
 		composite.setBounds(0, 0, 435, 292);
 		
 		Label label_mensaje = new Label(composite, SWT.NONE);
+		label_mensaje.setBackground(SWTResourceManager.getColor(255, 255, 224));
 		label_mensaje.setFont(SWTResourceManager.getFont("Segoe UI", 10, SWT.NORMAL));
 		label_mensaje.setAlignment(SWT.CENTER);
 		label_mensaje.setForeground(SWTResourceManager.getColor(SWT.COLOR_RED));
 		label_mensaje.setBounds(99, 87, 234, 15);
 		
 		Label lblIngreseElId = new Label(composite, SWT.NONE);
-		lblIngreseElId.setFont(SWTResourceManager.getFont("Segoe UI", 10, SWT.NORMAL));
+		lblIngreseElId.setBackground(SWTResourceManager.getColor(255, 255, 224));
+		lblIngreseElId.setFont(SWTResourceManager.getFont("STIXNonUnicode", 7, SWT.NORMAL));
 		lblIngreseElId.setBounds(10, 10, 323, 17);
 		lblIngreseElId.setText("Ingrese el nombre del producto que desea eliminar:");
 		
@@ -51,31 +55,37 @@ public class Carrito_Quitar {
 		text_nombre.setBounds(10, 31, 415, 21);
 		
 		Label obten_nombre = new Label(composite, SWT.NONE);
+		obten_nombre.setBackground(SWTResourceManager.getColor(255, 255, 224));
 		obten_nombre.setFont(SWTResourceManager.getFont("Segoe UI", 10, SWT.NORMAL));
 		obten_nombre.setAlignment(SWT.CENTER);
 		obten_nombre.setBounds(109, 129, 203, 15);
 		
 		Label obten_descr = new Label(composite, SWT.NONE);
+		obten_descr.setBackground(SWTResourceManager.getColor(255, 255, 224));
 		obten_descr.setFont(SWTResourceManager.getFont("Segoe UI", 10, SWT.NORMAL));
 		obten_descr.setAlignment(SWT.CENTER);
 		obten_descr.setBounds(109, 150, 203, 15);
 		
 		Label obten_cantidad = new Label(composite, SWT.NONE);
+		obten_cantidad.setBackground(SWTResourceManager.getColor(255, 255, 224));
 		obten_cantidad.setFont(SWTResourceManager.getFont("Segoe UI", 10, SWT.NORMAL));
 		obten_cantidad.setAlignment(SWT.CENTER);
 		obten_cantidad.setBounds(109, 170, 203, 15);
 		
 		Label obten_precio = new Label(composite, SWT.NONE);
+		obten_precio.setBackground(SWTResourceManager.getColor(255, 255, 224));
 		obten_precio.setFont(SWTResourceManager.getFont("Segoe UI", 10, SWT.NORMAL));
 		obten_precio.setAlignment(SWT.CENTER);
 		obten_precio.setBounds(109, 191, 203, 15);
 		
 		Label obten_expira = new Label(composite, SWT.NONE);
+		obten_expira.setBackground(SWTResourceManager.getColor(255, 255, 224));
 		obten_expira.setFont(SWTResourceManager.getFont("Segoe UI", 10, SWT.NORMAL));
 		obten_expira.setAlignment(SWT.CENTER);
 		obten_expira.setBounds(109, 212, 203, 15);
 		
 		Label eliminado = new Label(composite, SWT.NONE);
+		eliminado.setBackground(SWTResourceManager.getColor(255, 255, 224));
 		eliminado.setForeground(SWTResourceManager.getColor(255, 0, 0));
 		eliminado.setBounds(165, 236, 135, 15);
 									
@@ -111,22 +121,26 @@ public class Carrito_Quitar {
 		btnBuscar.setText("Buscar");
 		
 		Label lblNombre = new Label(composite, SWT.NONE);
-		lblNombre.setFont(SWTResourceManager.getFont("Segoe UI", 10, SWT.NORMAL));
+		lblNombre.setBackground(SWTResourceManager.getColor(255, 255, 224));
+		lblNombre.setFont(SWTResourceManager.getFont("STIXNonUnicode", 6, SWT.BOLD));
 		lblNombre.setBounds(10, 129, 55, 15);
 		lblNombre.setText("Nombre:");
 		
 		Label lblDescripcin = new Label(composite, SWT.NONE);
-		lblDescripcin.setFont(SWTResourceManager.getFont("Segoe UI", 10, SWT.NORMAL));
-		lblDescripcin.setBounds(10, 150, 75, 15);
+		lblDescripcin.setBackground(SWTResourceManager.getColor(255, 255, 224));
+		lblDescripcin.setFont(SWTResourceManager.getFont("STIXNonUnicode", 6, SWT.BOLD));
+		lblDescripcin.setBounds(10, 150, 93, 15);
 		lblDescripcin.setText("Descripci\u00F3n:");
 		
 		Label lblCantidad = new Label(composite, SWT.NONE);
-		lblCantidad.setFont(SWTResourceManager.getFont("Segoe UI", 10, SWT.NORMAL));
-		lblCantidad.setBounds(10, 170, 55, 15);
+		lblCantidad.setBackground(SWTResourceManager.getColor(255, 255, 224));
+		lblCantidad.setFont(SWTResourceManager.getFont("STIXNonUnicode", 6, SWT.BOLD));
+		lblCantidad.setBounds(10, 170, 75, 15);
 		lblCantidad.setText("Cantidad:");
 		
 		Label lblPrecio = new Label(composite, SWT.NONE);
-		lblPrecio.setFont(SWTResourceManager.getFont("Segoe UI", 10, SWT.NORMAL));
+		lblPrecio.setBackground(SWTResourceManager.getColor(255, 255, 224));
+		lblPrecio.setFont(SWTResourceManager.getFont("STIXNonUnicode", 6, SWT.BOLD));
 		lblPrecio.setBounds(10, 191, 55, 15);
 		lblPrecio.setText("Precio:");
 		
@@ -168,7 +182,8 @@ public class Carrito_Quitar {
 		btnCancelar.setText("Regresar");
 		
 		Label lblExpira = new Label(composite, SWT.NONE);
-		lblExpira.setFont(SWTResourceManager.getFont("Segoe UI", 10, SWT.NORMAL));
+		lblExpira.setBackground(SWTResourceManager.getColor(255, 255, 224));
+		lblExpira.setFont(SWTResourceManager.getFont("STIXNonUnicode", 6, SWT.BOLD));
 		lblExpira.setText("Expira:");
 		lblExpira.setBounds(10, 212, 55, 15);
 		
