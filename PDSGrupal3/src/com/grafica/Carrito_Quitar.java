@@ -20,11 +20,11 @@ import com.proxy.impl.OperacionesProductosCrudProxy;
 public class Carrito_Quitar {
 	private Text text_nombre;
 	private CarritoCompuesto pp = CarritoCompuesto.getInstance();
-	private OperacionesProductosCrudProxy pc = OperacionesProductosCrudProxy.getInstance();
-	Productos p ;
+	
 
 	/**
 	 * Open the window.
+	 * @wbp.parser.entryPoint
 	 */
 	public void open() {
 		Display display = Display.getDefault();
@@ -84,20 +84,20 @@ public class Carrito_Quitar {
 		btnBuscar.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseDown(MouseEvent e) {
-				Productos p ;
+				
 				
 				eliminado.setText("");
 					 try {
-						p = pp.getProducto(text_nombre.getText());
-						if(p == null) {
+						
+						if(pp.getProducto(text_nombre.getText()) == null) {
 							label_mensaje.setText("Producto no encontrado");
 						}else {
 							
-							obten_nombre.setText(p.getNombre());
-							obten_descr.setText(p.getDescripcion());
-							obten_cantidad.setText(Integer.toString(p.getCantidad()));
-							obten_precio.setText(Double.toString(p.getPrecio()));
-							obten_expira.setText(p.getFecha_caduca());
+							obten_nombre.setText(pp.getProducto(text_nombre.getText()).getNombre());
+							obten_descr.setText(pp.getProducto(text_nombre.getText()).getDescripcion());
+							obten_cantidad.setText(Integer.toString(pp.getProducto(text_nombre.getText()).getCantidad()));
+							obten_precio.setText(Double.toString(pp.getProducto(text_nombre.getText()).getPrecio()));
+							obten_expira.setText(pp.getProducto(text_nombre.getText()).getFecha_caduca());
 							label_mensaje.setText("");
 						}
 					} catch (NumberFormatException e1) {
@@ -139,19 +139,15 @@ public class Carrito_Quitar {
 				
 				
 				try {
-					p = pp.getProducto(text_nombre.getText());
-					Productos p1 = pc.leerProducto(p.getId());
-					
-					p.setCantidad(p1.getCantidad() + p.getCantidad());
-					pp.removeProducto(p);
-					pc.actualizar(p, p.getId());
+					;
+					pp.removeProducto(pp.getProducto(text_nombre.getText()));
 					obten_nombre.setText("");
 					obten_descr.setText("");
 					obten_cantidad.setText("");
 					obten_precio.setText("");
 					obten_expira.setText("");
 					eliminado.setText("Producto Eliminado");
-				} catch (NumberFormatException | SQLException e1) {
+				} catch (NumberFormatException e1) {
 					eliminado.setText("Error al eliminar");
 					e1.printStackTrace();
 				}

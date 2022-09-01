@@ -11,6 +11,7 @@ import org.eclipse.swt.widgets.Menu;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
 
+import com.composite.impl.CarritoCompuesto;
 import com.proxy.impl.OperacionesProductosCrudProxy;
 
 import org.eclipse.swt.widgets.Button;
@@ -25,7 +26,7 @@ public class Admin_Agregar {
 	private Text text_precio_p;
 	private Text text_fecha_caduca;
 	private Text text_id;
-
+	private OperacionesProductosCrudProxy pc = OperacionesProductosCrudProxy.getInstance();
 	
 	/**
 	 * Open the window.
@@ -110,7 +111,7 @@ public class Admin_Agregar {
 			@Override
 			public void mouseDown(MouseEvent e) {
 				
-				OperacionesProductosCrudProxy pc = OperacionesProductosCrudProxy.getInstance();
+				
 				
 			if(text_id.getText().equals(null) && text_nombre_p.getText().equals(null) && text_cantidad_p.getText().equals(null) && text_precio_p.getText().equals(null) && text_fecha_caduca.getText().equals(null)) {
 				message.setText("Error al ingresar");

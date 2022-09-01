@@ -12,8 +12,6 @@ import com.proxy.interfaz.OperacionesPoductosCrud;
 public class PrincipalCrud {
 
 	public static void main(String[] args) throws SQLException {
-		
-		Conexion a = new Conexion();
 		OperacionesProductosCrudProxy opPro = OperacionesProductosCrudProxy.getInstance();
 		
 		/*

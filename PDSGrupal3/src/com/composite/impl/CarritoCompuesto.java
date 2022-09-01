@@ -1,17 +1,15 @@
 package com.composite.impl;
 
-import java.util.ArrayList; 
-import java.util.stream.Stream;
-
+import java.util.ArrayList;  
 import com.composite.interfaz.IPrecio;
 import com.crud.pds.Productos;
-import com.proxy.impl.OperacionesProductosCrudProxy;
+
 
 
 public class CarritoCompuesto implements IPrecio{
-	
+
 	private ArrayList<Productos> productos;
-private static CarritoCompuesto instancia;
+	private static CarritoCompuesto instancia;
 	
 	private CarritoCompuesto() {
 		
@@ -31,6 +29,7 @@ private static CarritoCompuesto instancia;
 	
 	public void addProduct(Productos prod) {
 		productos.add(prod);
+		prod.setCantidad(0);
 	}
 	
 	public void removeProducto(Productos prod) {
@@ -62,7 +61,7 @@ private static CarritoCompuesto instancia;
 			productos.get(i).setTotalProducto(productos.get(i).getCantidad()*productos.get(i).getPrecio());
 		}
 				
-		return importeTotal;
+		return importeTotal ;
 	}
 
 }

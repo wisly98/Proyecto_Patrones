@@ -16,9 +16,10 @@ import com.crud.pds.Productos;
 
 public class Carrito_Buscar {
 	private Text text_nombre;
-
+	private CarritoCompuesto pc = CarritoCompuesto.getInstance();
 	/**
 	 * Open the window.
+	 * @wbp.parser.entryPoint
 	 */
 	public void open() {
 		Display display = Display.getDefault();
@@ -101,20 +102,20 @@ public class Carrito_Buscar {
 			@Override
 			public void mouseDown(MouseEvent e) {
 
-				CarritoCompuesto pc = CarritoCompuesto.getInstance();
-				Productos p ;
+				
+				 ;
 				label_mensaje.setText("");
 					 try {
-						p = pc.getProducto(text_nombre.getText());
-						if(p== null) {
+						
+						if(pc.getProducto(text_nombre.getText())== null) {
 							label_mensaje.setText("El producto no ha sido encontrado");
 						}else {
 							
-							obten_nombre.setText(p.getNombre());
-							obten_descr.setText(p.getDescripcion());
-							obten_cantidad.setText(Integer.toString(p.getCantidad()));
-							obten_precio.setText(Double.toString(p.getPrecio()));
-							obten_expira.setText(p.getFecha_caduca());
+							obten_nombre.setText(pc.getProducto(text_nombre.getText()).getNombre());
+							obten_descr.setText(pc.getProducto(text_nombre.getText()).getDescripcion());
+							obten_cantidad.setText(Integer.toString(pc.getProducto(text_nombre.getText()).getCantidad()));
+							obten_precio.setText(Double.toString(pc.getProducto(text_nombre.getText()).getPrecio()));
+							obten_expira.setText(pc.getProducto(text_nombre.getText()).getFecha_caduca());
 							label_mensaje.setText("");
 						}
 					} catch (NumberFormatException e1) {

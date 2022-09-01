@@ -3,10 +3,17 @@ package com.grafica;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Label;
+
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
 import org.eclipse.swt.SWT;
 import org.eclipse.wb.swt.SWTResourceManager;
 
 import com.composite.impl.CarritoCompuesto;
+import com.crud.pds.Productos;
+import com.proxy.impl.OperacionesProductosCrudProxy;
 
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.swt.widgets.Button;
@@ -18,26 +25,21 @@ public class Carrito_Pagar_Paypal {
 	private Text text_n;
 	private Text text_a;
 	private Text text_c;
-	private Text text_total;
-	private CarritoCompuesto cp;
-	/**
-	 * Launch the application.
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		try {
-			Carrito_Pagar_Paypal window = new Carrito_Pagar_Paypal();
-			window.open();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-
+	private CarritoCompuesto cc = CarritoCompuesto.getInstance();
+	private OperacionesProductosCrudProxy pc = OperacionesProductosCrudProxy.getInstance();
+	private List<Productos> prod;
+	private Productos p;
 	/**
 	 * Open the window.
+	 * @wbp.parser.entryPoint
 	 */
 	public void open() {
-		cp = CarritoCompuesto.getInstance();
+		try {
+			prod = pc.LeerProductos();
+		} catch (SQLException e2) {
+			// TODO Auto-generated catch block
+			e2.printStackTrace();
+		}
 		Display display = Display.getDefault();
 		Shell shell = new Shell();
 		shell.setSize(450, 299);
@@ -80,12 +82,8 @@ public class Carrito_Pagar_Paypal {
 		lblTotalAPagar.setFont(SWTResourceManager.getFont("Segoe UI", 10, SWT.NORMAL));
 		lblTotalAPagar.setText("Total a pagar");
 		
-		text_total = new Text(composite, SWT.BORDER);
-		text_total.setBounds(218, 143, 76, 21);
-		text_total.setText(Double.toString(cp.getImporteTotal()));
-		
 		Label lblNewLabel = new Label(composite, SWT.NONE);
-		lblNewLabel.setBounds(300, 146, 55, 15);
+		lblNewLabel.setBounds(278, 146, 55, 15);
 		lblNewLabel.setText("$");
 		
 		Label label_msj = new Label(composite, SWT.NONE);
@@ -93,7 +91,10 @@ public class Carrito_Pagar_Paypal {
 		label_msj.setForeground(SWTResourceManager.getColor(SWT.COLOR_RED));
 		label_msj.setFont(SWTResourceManager.getFont("Segoe UI", 10, SWT.NORMAL));
 		
-				
+		
+		Label label_t = new Label(composite, SWT.NONE);
+		label_t.setBounds(217, 144, 55, 15);
+		label_t.setText(String.valueOf(String.format("%.2f",cc.getImporteTotal())));
 				Button btnNewButton = new Button(composite, SWT.NONE);
 				btnNewButton.setBounds(136, 208, 75, 25);
 				btnNewButton.addMouseListener(new MouseAdapter() {
@@ -103,14 +104,31 @@ public class Carrito_Pagar_Paypal {
 							text_n.setText("");
 							text_a.setText("");
 							text_c.setText("");
-							text_total.setText("");
+							
 							label_msj.setText("Error al realizar el pago");
+						}else {
+							text_n.setText("");
+							text_a.setText("");
+							text_c.setText("");
+							label_t.setText("0.0");
+							
+								try {
+									for(int i = 0; i < prod.size(); i++) {
+										p = cc.getProducto(prod.get(i).getNombre());
+										prod.get(i).setCantidad(prod.get(i).getCantidad() - p.getCantidad());
+										pc.actualizar(prod.get(i), prod.get(i).getId());
+									
+								
+									}
+									label_msj.setText("Pago realizado con éxito");
+									cc.getProductos().removeAll(prod);
+								} catch (SQLException e1) {
+									// TODO Auto-generated catch block
+									e1.printStackTrace();
+								}
+							
 						}
-						text_n.setText("");
-						text_a.setText("");
-						text_c.setText("");
-						text_total.setText("");
-						label_msj.setText("Pago realizado con éxito");
+						
 					}
 				});
 				btnNewButton.setFont(SWTResourceManager.getFont("Segoe UI", 10, SWT.NORMAL));
@@ -119,7 +137,8 @@ public class Carrito_Pagar_Paypal {
 				Button btnNewButton_1 = new Button(composite, SWT.NONE);
 				btnNewButton_1.setBounds(239, 209, 75, 25);
 				btnNewButton_1.setText("Regresar");
-		
+				
+				
 	
 		btnNewButton_1.addMouseListener(new MouseAdapter() {
 			@Override

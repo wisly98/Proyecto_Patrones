@@ -11,7 +11,6 @@ import org.eclipse.swt.events.MouseAdapter;
 import org.eclipse.swt.events.MouseEvent;
 
 public class Carrito_Pagar {
-	private Label paypal;
 
 	/**
 	 * Launch the application.
@@ -38,39 +37,61 @@ public class Carrito_Pagar {
 		Composite composite = new Composite(shell, SWT.NONE);
 		composite.setBounds(0, 0, 435, 261);
 		
-		paypal = new Label(composite, SWT.NONE);
-		paypal.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseDown(MouseEvent e) {
-				
-			}
-		});
-		paypal.setImage(SWTResourceManager.getImage(Carrito_Pagar.class, "/com/imagenes/paypal.jpg"));
-		paypal.setBounds(29, 83, 85, 78);
-		
-		Label transferencia = new Label(composite, SWT.NONE);
-		transferencia.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseDown(MouseEvent e) {
-			}
-		});
-		transferencia.setImage(SWTResourceManager.getImage(Carrito_Pagar.class, "/com/imagenes/transferencia.png"));
-		transferencia.setBounds(173, 83, 85, 78);
-		
-		Label tarjeta_debito = new Label(composite, SWT.NONE);
-		tarjeta_debito.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseDown(MouseEvent e) {
-				
-			}
-		});
-		tarjeta_debito.setImage(SWTResourceManager.getImage(Carrito_Pagar.class, "/com/imagenes/tarjeta.png"));
-		tarjeta_debito.setBounds(316, 83, 85, 78);
-		
 		Button btnRegresar = new Button(composite, SWT.NONE);
+		btnRegresar.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseDown(MouseEvent e) {
+				shell.close();
+			}
+		});
 		btnRegresar.setFont(SWTResourceManager.getFont("Segoe UI", 10, SWT.NORMAL));
 		btnRegresar.setBounds(173, 214, 75, 25);
 		btnRegresar.setText("Regresar");
+		
+		Button button = new Button(composite, SWT.NONE);
+		button.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseDown(MouseEvent e) {
+				try {
+					Carrito_Pagar_Paypal window = new Carrito_Pagar_Paypal();
+					window.open();
+				} catch (Exception e2) {
+					e2.printStackTrace();
+				}
+			}
+		});
+		button.setImage(SWTResourceManager.getImage(Carrito_Pagar.class, "/com/imagenes/paypal.jpg"));
+		button.setBounds(34, 63, 85, 78);
+		
+		Button button_1 = new Button(composite, SWT.NONE);
+		button_1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseDown(MouseEvent e) {
+				try {
+					Carrito_Pagar_Transferencia window = new Carrito_Pagar_Transferencia();
+					window.open();
+				} catch (Exception e3) {
+					e3.printStackTrace();
+				}
+			}
+		});
+		button_1.setImage(SWTResourceManager.getImage(Carrito_Pagar.class, "/com/imagenes/transferencia.png"));
+		button_1.setBounds(163, 63, 85, 78);
+		
+		Button button_1_1 = new Button(composite, SWT.NONE);
+		button_1_1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseDown(MouseEvent e) {
+				try {
+					Carrito_Pagar_Tarjeta window = new Carrito_Pagar_Tarjeta();
+					window.open();
+				} catch (Exception e1) {
+					e1.printStackTrace();
+				}
+			}
+		});
+		button_1_1.setImage(SWTResourceManager.getImage(Carrito_Pagar.class, "/com/imagenes/tarjeta.png"));
+		button_1_1.setBounds(302, 63, 85, 78);
 
 		shell.open();
 		shell.layout();

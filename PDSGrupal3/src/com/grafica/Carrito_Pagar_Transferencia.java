@@ -3,30 +3,31 @@ package com.grafica;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Composite;
+
+import java.sql.SQLException;
+import java.util.List;
+
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.wb.swt.SWTResourceManager;
+
+import com.composite.impl.CarritoCompuesto;
+import com.crud.pds.Productos;
+import com.proxy.impl.OperacionesProductosCrudProxy;
+
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Text;
+import org.eclipse.swt.events.MouseAdapter;
+import org.eclipse.swt.events.MouseEvent;
 
 public class Carrito_Pagar_Transferencia {
-	private Text text_t;
-	
-	/**
-	 * Launch the application.
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		try {
-			Carrito_Pagar_Transferencia window = new Carrito_Pagar_Transferencia();
-			window.open();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-
+	private CarritoCompuesto cc = CarritoCompuesto.getInstance();
+	private OperacionesProductosCrudProxy pc = OperacionesProductosCrudProxy.getInstance();
+	private List<Productos> prod;
+	private Productos p;
 	/**
 	 * Open the window.
+	 * @wbp.parser.entryPoint
 	 */
 	public void open() {
 		Display display = Display.getDefault();
@@ -75,28 +76,61 @@ public class Carrito_Pagar_Transferencia {
 		lblFranciscoJosChanataxi.setAlignment(SWT.CENTER);
 		lblFranciscoJosChanataxi.setBounds(145, 116, 279, 15);
 		
+		Label label_t = new Label(composite, SWT.NONE);
+		label_t.setFont(SWTResourceManager.getFont("Segoe UI", 10, SWT.NORMAL));
+		label_t.setBounds(197, 154, 55, 15);
+		label_t.setText(String.valueOf(String.format("%.2f",cc.getImporteTotal())));
+		
+		Label label_msj = new Label(composite, SWT.NONE);
+		label_msj.setForeground(SWTResourceManager.getColor(SWT.COLOR_RED));
+		label_msj.setFont(SWTResourceManager.getFont("Segoe UI", 10, SWT.NORMAL));
+		label_msj.setBounds(92, 183, 253, 25);
+		
 		Button btnHecho = new Button(composite, SWT.NONE);
+		btnHecho.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseDown(MouseEvent e) {
+				try {
+					for(int i = 0; i < prod.size(); i++) {
+						p = cc.getProducto(prod.get(i).getNombre());
+						prod.get(i).setCantidad(prod.get(i).getCantidad() - p.getCantidad());
+						pc.actualizar(prod.get(i), prod.get(i).getId());
+					
+				
+					}
+					label_t.setText("0.0");
+					label_msj.setText("Transferencia realizada con éxito");
+					cc.getProductos().removeAll(prod);
+				} catch (SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}
+		});
 		btnHecho.setFont(SWTResourceManager.getFont("Segoe UI", 10, SWT.NORMAL));
-		btnHecho.setBounds(116, 204, 75, 25);
+		btnHecho.setBounds(116, 214, 75, 25);
 		btnHecho.setText("Hecho");
 		
 		Button btnRegresar = new Button(composite, SWT.NONE);
+		btnRegresar.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseDown(MouseEvent e) {
+				shell.close();
+			}
+		});
 		btnRegresar.setText("Regresar");
 		btnRegresar.setFont(SWTResourceManager.getFont("Segoe UI", 10, SWT.NORMAL));
-		btnRegresar.setBounds(239, 204, 75, 25);
+		btnRegresar.setBounds(239, 214, 75, 25);
 		
 		Label lblTotal = new Label(composite, SWT.NONE);
 		lblTotal.setFont(SWTResourceManager.getFont("Segoe UI", 10, SWT.NORMAL));
 		lblTotal.setBounds(103, 154, 88, 23);
 		lblTotal.setText("Total a pagar");
 		
-		text_t = new Text(composite, SWT.BORDER);
-		text_t.setBounds(197, 154, 76, 21);
-		
 		Label lblNewLabel = new Label(composite, SWT.NONE);
-		lblNewLabel.setBounds(279, 158, 55, 15);
-		lblNewLabel.setText("$");
-
+		lblNewLabel.setBounds(270, 156, 55, 15);
+		lblNewLabel.setText("$");	
+	
 		shell.open();
 		shell.layout();
 		while (!shell.isDisposed()) {

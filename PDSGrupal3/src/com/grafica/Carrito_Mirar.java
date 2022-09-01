@@ -21,13 +21,14 @@ import org.eclipse.swt.widgets.Label;
 
 public class Carrito_Mirar {
 	private Table table;
-
+	private CarritoCompuesto pc = CarritoCompuesto.getInstance();
+	
 	/**
 	 * Open the window.
 	 * @wbp.parser.entryPoint
 	 */
 	public void open() {
-		CarritoCompuesto pc = CarritoCompuesto.getInstance();
+		
 		pc.getImporteTotal();
 		
 		Display display = Display.getDefault();
@@ -91,36 +92,38 @@ public class Carrito_Mirar {
 		TableItem tableItem; 
 		List<TableItem> filas = new ArrayList<TableItem>();
 		List<Productos> a = pc.getProductos();
-		double pagar = 0.0;
+		
 		if(a != null) {
 			for(int i = 0; i < a.size(); i++) {
-				
-				tableItem = new TableItem(table, SWT.NONE);
-				for(int j = 0; j < table.getColumnCount(); j++) {
-					
-					if(j == 0) {
-						tableItem.setText(j, a.get(i).getNombre());
-					}
-					if(j == 1) {
-						tableItem.setText(j, a.get(i).getDescripcion());
-					}
-					if(j == 2) {
-						tableItem.setText(j, Integer.toString(a.get(i).getCantidad()));
-					}
-					if(j == 3) {
-						tableItem.setText(j, Double.toString(a.get(i).getPrecio()));
-					}
-					if(j == 4) {
-						tableItem.setText(j, Double.toString(a.get(i).getTotalProducto()));
+				if(a.get(i).getCantidad() != 0) {
+					tableItem = new TableItem(table, SWT.NONE);
+					for(int j = 0; j < table.getColumnCount(); j++) {
 						
-					}
-					filas.add(tableItem);
-					pagar = pagar + a.get(i).getTotalProducto();
-				};
+						if(j == 0) {
+							tableItem.setText(j, a.get(i).getNombre());
+						}
+						if(j == 1) {
+							tableItem.setText(j, a.get(i).getDescripcion());
+						}
+						if(j == 2) {
+							tableItem.setText(j, Integer.toString(a.get(i).getCantidad()));
+						}
+						if(j == 3) {
+							tableItem.setText(j, Double.toString(a.get(i).getPrecio()));
+						}
+						if(j == 4) {
+							tableItem.setText(j, String.valueOf(String.format("%.2f", a.get(i).getTotalProducto())));
+							
+						}
+						filas.add(tableItem);
+						
+					};
+				}
+				
 				
 			System.out.println(i + " " + a.get(i));
 			}
-			total.setText(Double.toString(pagar));
+			total.setText(String.valueOf(String.format("%.2f",pc.getImporteTotal())));
 			
 		}
 		
@@ -133,4 +136,5 @@ public class Carrito_Mirar {
 			}
 		}
 	}
+
 }
