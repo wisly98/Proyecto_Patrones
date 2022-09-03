@@ -57,13 +57,13 @@ public class Carrito_Buscar {
 		
 		Label lblDescripcin = new Label(composite, SWT.NONE);
 		lblDescripcin.setFont(SWTResourceManager.getFont("STIXNonUnicode", 6, SWT.BOLD));
-		lblDescripcin.setBounds(10, 150, 75, 15);
+		lblDescripcin.setBounds(10, 150, 93, 15);
 		lblDescripcin.setText("Descripci\u00F3n:");
 		lblDescripcin.setBackground(SWTResourceManager.getColor(255, 255, 224));
 		
 		Label lblCantidad = new Label(composite, SWT.NONE);
 		lblCantidad.setFont(SWTResourceManager.getFont("STIXNonUnicode", 6, SWT.BOLD));
-		lblCantidad.setBounds(10, 170, 55, 15);
+		lblCantidad.setBounds(10, 170, 80, 15);
 		lblCantidad.setText("Cantidad:");
 		lblCantidad.setBackground(SWTResourceManager.getColor(255, 255, 224));
 		
@@ -80,27 +80,27 @@ public class Carrito_Buscar {
 		lblExpira.setBackground(SWTResourceManager.getColor(255, 255, 224));
 		
 		Label obten_nombre = new Label(composite, SWT.NONE);
-		obten_nombre.setFont(SWTResourceManager.getFont("Segoe UI", 10, SWT.NORMAL));
+		obten_nombre.setFont(SWTResourceManager.getFont("STIXNonUnicode", 7, SWT.NORMAL));
 		obten_nombre.setAlignment(SWT.CENTER);
 		obten_nombre.setBounds(109, 129, 203, 15);
 		
 		Label obten_descr = new Label(composite, SWT.NONE);
-		obten_descr.setFont(SWTResourceManager.getFont("Segoe UI", 10, SWT.NORMAL));
+		obten_descr.setFont(SWTResourceManager.getFont("STIXNonUnicode", 7, SWT.NORMAL));
 		obten_descr.setAlignment(SWT.CENTER);
 		obten_descr.setBounds(109, 150, 203, 15);
 		
 		Label obten_cantidad = new Label(composite, SWT.NONE);
-		obten_cantidad.setFont(SWTResourceManager.getFont("Segoe UI", 10, SWT.NORMAL));
+		obten_cantidad.setFont(SWTResourceManager.getFont("STIXNonUnicode", 7, SWT.NORMAL));
 		obten_cantidad.setAlignment(SWT.CENTER);
 		obten_cantidad.setBounds(109, 170, 203, 15);
 		
 		Label obten_precio = new Label(composite, SWT.NONE);
-		obten_precio.setFont(SWTResourceManager.getFont("Segoe UI", 10, SWT.NORMAL));
+		obten_precio.setFont(SWTResourceManager.getFont("STIXNonUnicode", 7, SWT.NORMAL));
 		obten_precio.setAlignment(SWT.CENTER);
 		obten_precio.setBounds(109, 191, 203, 15);
 		
 		Label obten_expira = new Label(composite, SWT.NONE);
-		obten_expira.setFont(SWTResourceManager.getFont("Segoe UI", 10, SWT.NORMAL));
+		obten_expira.setFont(SWTResourceManager.getFont("STIXNonUnicode", 7, SWT.NORMAL));
 		obten_expira.setAlignment(SWT.CENTER);
 		obten_expira.setBounds(109, 212, 203, 15);
 		

@@ -17,11 +17,14 @@ public class Inicia {
 // Inicia el programa .
 	
 	
+	/**
+	 * @wbp.parser.entryPoint
+	 */
 	public static void open() { // método para mostrar los componentes en pantalla. 
 		Display display = Display.getDefault();
 		Shell shell = new Shell();
 		shell.setBackground(SWTResourceManager.getColor(0, 255, 255));
-		shell.setImage(SWTResourceManager.getImage("C:\\Users\\Usuario-PC\\Downloads\\Iconos swt\\images.png"));
+		shell.setImage(SWTResourceManager.getImage(Inicia.class, "/com/imagenes/WhatsApp Image 2022-02-19 at 10.30.59.jpeg"));
 		shell.setSize(245, 279);
 		shell.setText("FAW");
 		
