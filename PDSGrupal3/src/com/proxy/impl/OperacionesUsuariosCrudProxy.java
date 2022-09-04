@@ -1,11 +1,8 @@
 package com.proxy.impl;
-
 import java.sql.SQLException;  
 import java.util.List;
-
 import com.crud.pds.Productos;
 import com.prototype.abs.UsuarioBasico;
-
 import com.proxy.interfaz.OperacionesUsuariosCrud;
 
 public class OperacionesUsuariosCrudProxy implements OperacionesUsuariosCrud{
@@ -24,7 +21,6 @@ public class OperacionesUsuariosCrudProxy implements OperacionesUsuariosCrud{
 	       }
 	        return instancia;
 	   }
-	
 	private OperacionesUsuariosCrudimpl target = new OperacionesUsuariosCrudimpl();
 
 	@Override
@@ -33,13 +29,11 @@ public class OperacionesUsuariosCrudProxy implements OperacionesUsuariosCrud{
 		boolean crear = target.crear(usuario, nombre, apellido, edad, contrasenia);
 		return crear;
 	}
-
 	@Override
 	public UsuarioBasico leerUsuario(String usuario) throws SQLException, CloneNotSupportedException {
 		UsuarioBasico leerUsuario = target.leerUsuario(usuario);
 		return leerUsuario;
 	}
-
 	@Override
 	public boolean actualizar(UsuarioBasico usuarios, String usuario) throws SQLException {
 		boolean actualizar = target.actualizar(usuarios, usuario);
@@ -57,9 +51,4 @@ public class OperacionesUsuariosCrudProxy implements OperacionesUsuariosCrud{
 		List<UsuarioBasico> leerUsuarios = target.LeerUsuarios();
 		return leerUsuarios;
 	}
-
-	
-
-	
-
 }

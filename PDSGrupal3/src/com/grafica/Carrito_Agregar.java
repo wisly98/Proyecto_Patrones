@@ -26,10 +26,7 @@ public class Carrito_Agregar {
 	private List<Productos> productos = new ArrayList<Productos>();
 	private OperacionesProductosCrudProxy pc = OperacionesProductosCrudProxy.getInstance();
 	private CarritoCompuesto pro = CarritoCompuesto.getInstance();
-	/**
-	 * Open the window.
-	 * @wbp.parser.entryPoint
-	 */
+
 	public void open() {
 		try {
 			aux = pc.LeerProductos();

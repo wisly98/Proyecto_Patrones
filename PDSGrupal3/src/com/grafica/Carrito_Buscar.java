@@ -17,15 +17,14 @@ import com.crud.pds.Productos;
 public class Carrito_Buscar {
 	private Text text_nombre;
 	private CarritoCompuesto pc = CarritoCompuesto.getInstance();
-	/**
-	 * Open the window.
-	 * @wbp.parser.entryPoint
-	 */
+	
 	public void open() {
 		Display display = Display.getDefault();
 		Shell shell = new Shell();
 		shell.setSize(450, 300);
 		shell.setText("Plaza la Merced");
+		shell.setImage(SWTResourceManager.getImage(Carrito_Quitar.class, "/com/imagenes/WhatsApp Image 2022-02-19 at 10.30.59.jpeg"));		
+
 		shell.setLayout(null);
 		
 		Composite composite = new Composite(shell, SWT.NONE);

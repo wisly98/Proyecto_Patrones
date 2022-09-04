@@ -14,12 +14,6 @@ import org.eclipse.swt.widgets.Label;
 
 public class Inicia {
 	
-// Inicia el programa .
-	
-	
-	/**
-	 * @wbp.parser.entryPoint
-	 */
 	public static void open() { // método para mostrar los componentes en pantalla. 
 		Display display = Display.getDefault();
 		Shell shell = new Shell();

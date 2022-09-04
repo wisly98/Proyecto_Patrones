@@ -71,13 +71,13 @@ public class Admin_Actualizar {
 		lblNombre.setFont(SWTResourceManager.getFont("STIXNonUnicode", 6, SWT.BOLD));
 		
 		Label lblDescripcin = new Label(composite, SWT.NONE);
-		lblDescripcin.setBounds(10, 150, 75, 15);
+		lblDescripcin.setBounds(10, 150, 89, 15);
 		lblDescripcin.setText("Descripci\u00F3n:");
 		lblDescripcin.setBackground(SWTResourceManager.getColor(255, 255, 224));
 		lblDescripcin.setFont(SWTResourceManager.getFont("STIXNonUnicode", 6, SWT.BOLD));
 		
 		Label lblCantidad = new Label(composite, SWT.NONE);
-		lblCantidad.setBounds(10, 170, 55, 15);
+		lblCantidad.setBounds(10, 170, 75, 15);
 		lblCantidad.setText("Cantidad:");
 		lblCantidad.setBackground(SWTResourceManager.getColor(255, 255, 224));
 		lblCantidad.setFont(SWTResourceManager.getFont("STIXNonUnicode", 6, SWT.BOLD));

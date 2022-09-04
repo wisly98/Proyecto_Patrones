@@ -31,10 +31,6 @@ public class Usuario_IniciaSesion {
 	private Display display = Display.getDefault();
 	private Shell shell = new Shell();
 
-	/**
-	 * Open the window.
-	 * @wbp.parser.entryPoint
-	 */
 	public void open() throws SQLException{ // método para mostrar los componentes en pantalla.
 		
 		

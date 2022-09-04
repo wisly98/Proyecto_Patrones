@@ -14,14 +14,15 @@ import org.eclipse.swt.events.SelectionEvent;
 public class Carrito {
 
 	/**
-	 * Open the window.
 	 * @wbp.parser.entryPoint
 	 */
 	public void open() {
 		Display display = Display.getDefault();
 		Shell shell = new Shell();
 		shell.setSize(635, 433);
-		shell.setText("SWT Application");
+		shell.setText("Plaza la Merced");
+		shell.setImage(SWTResourceManager.getImage(Carrito_Quitar.class, "/com/imagenes/WhatsApp Image 2022-02-19 at 10.30.59.jpeg"));		
+
 		shell.setLayout(null);
 		
 		Composite composite = new Composite(shell, SWT.NONE);
