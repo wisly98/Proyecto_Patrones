@@ -36,6 +36,7 @@ public class Admin_Actualizar {
 	public void open() {
 		Display display = Display.getDefault();
 		Shell shell = new Shell();
+		shell.setImage(SWTResourceManager.getImage(Admin_Actualizar.class, "/com/imagenes/logo.jpeg"));
 		shell.setSize(450, 329);
 		shell.setText("Plaza la Merced");
 		//shell.setImage(SWTResourceManager.getImage(Carrito_Quitar.class, "/com/imagenes/WhatsApp Image 2022-02-19 at 10.30.59.jpeg"));
@@ -49,7 +50,7 @@ public class Admin_Actualizar {
 		lbl_ingrese.setBounds(10, 10, 149, 15);
 		lbl_ingrese.setText("Ingrese el ID del producto");
 		lbl_ingrese.setBackground(SWTResourceManager.getColor(255, 255, 224));
-		lbl_ingrese.setFont(SWTResourceManager.getFont("STIXNonUnicode", 7, SWT.NORMAL));
+		lbl_ingrese.setFont(SWTResourceManager.getFont("STIXNonUnicode", 10, SWT.NORMAL));
 		
 		Label label_mensaje = new Label(composite, SWT.NONE);
 		label_mensaje.setFont(SWTResourceManager.getFont("Segoe UI", 10, SWT.NORMAL));
@@ -68,32 +69,32 @@ public class Admin_Actualizar {
 		lblNombre.setBounds(10, 129, 55, 15);
 		lblNombre.setText("Nombre:");
 		lblNombre.setBackground(SWTResourceManager.getColor(255, 255, 224));
-		lblNombre.setFont(SWTResourceManager.getFont("STIXNonUnicode", 6, SWT.BOLD));
+		lblNombre.setFont(SWTResourceManager.getFont("STIXNonUnicode", 10, SWT.BOLD));
 		
 		Label lblDescripcin = new Label(composite, SWT.NONE);
 		lblDescripcin.setBounds(10, 150, 75, 15);
 		lblDescripcin.setText("Descripci\u00F3n:");
 		lblDescripcin.setBackground(SWTResourceManager.getColor(255, 255, 224));
-		lblDescripcin.setFont(SWTResourceManager.getFont("STIXNonUnicode", 6, SWT.BOLD));
+		lblDescripcin.setFont(SWTResourceManager.getFont("STIXNonUnicode", 10, SWT.BOLD));
 		
 		Label lblCantidad = new Label(composite, SWT.NONE);
 		lblCantidad.setBounds(10, 170, 55, 15);
 		lblCantidad.setText("Cantidad:");
 		lblCantidad.setBackground(SWTResourceManager.getColor(255, 255, 224));
-		lblCantidad.setFont(SWTResourceManager.getFont("STIXNonUnicode", 6, SWT.BOLD));
+		lblCantidad.setFont(SWTResourceManager.getFont("STIXNonUnicode", 10, SWT.BOLD));
 		
 		
 		Label lblPrecio = new Label(composite, SWT.NONE);
 		lblPrecio.setBounds(10, 191, 55, 15);
 		lblPrecio.setText("Precio:");
 		lblPrecio.setBackground(SWTResourceManager.getColor(255, 255, 224));
-		lblPrecio.setFont(SWTResourceManager.getFont("STIXNonUnicode", 6, SWT.BOLD));
+		lblPrecio.setFont(SWTResourceManager.getFont("STIXNonUnicode", 10, SWT.BOLD));
 		
 		Label lblExpira = new Label(composite, SWT.NONE);
 		lblExpira.setText("Expira:");
 		lblExpira.setBounds(10, 212, 55, 15);
 		lblExpira.setBackground(SWTResourceManager.getColor(255, 255, 224));
-		lblExpira.setFont(SWTResourceManager.getFont("STIXNonUnicode", 6, SWT.BOLD));
+		lblExpira.setFont(SWTResourceManager.getFont("STIXNonUnicode", 10, SWT.BOLD));
 		
 		text_nombre = new Text(composite, SWT.BORDER);
 		text_nombre.setFont(SWTResourceManager.getFont("Segoe UI", 10, SWT.NORMAL));
@@ -218,7 +219,7 @@ public class Admin_Actualizar {
 		lblId.setBounds(10, 108, 55, 15);
 		lblId.setText("ID:");
 		lblId.setBackground(SWTResourceManager.getColor(255, 255, 224));
-		lblId.setFont(SWTResourceManager.getFont("STIXNonUnicode", 6, SWT.BOLD));
+		lblId.setFont(SWTResourceManager.getFont("STIXNonUnicode", 10, SWT.BOLD));
 
 		shell.open();
 		shell.layout();

@@ -30,6 +30,7 @@ public class Carrito_Pagar {
 	public void open() {
 		Display display = Display.getDefault();
 		Shell shell = new Shell();
+		shell.setImage(SWTResourceManager.getImage(Carrito_Pagar.class, "/com/imagenes/logo.jpeg"));
 		shell.setSize(450, 300);
 		//shell.setImage(SWTResourceManager.getImage(Carrito_Quitar.class, "/com/imagenes/WhatsApp Image 2022-02-19 at 10.30.59.jpeg"));
 		shell.setText("Plaza la Merced");
@@ -45,7 +46,7 @@ public class Carrito_Pagar {
 				shell.close();
 			}
 		});
-		btnRegresar.setFont(SWTResourceManager.getFont("STIXNonUnicode", 6, SWT.BOLD));
+		btnRegresar.setFont(SWTResourceManager.getFont("STIXNonUnicode", 10, SWT.BOLD));
 		btnRegresar.setBounds(173, 214, 75, 25);
 		btnRegresar.setText("Regresar");
 		

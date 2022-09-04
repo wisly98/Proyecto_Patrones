@@ -25,6 +25,7 @@ public class Carrito_Quitar {
 	public void open() {
 		Display display = Display.getDefault();
 		Shell shell = new Shell();
+		shell.setImage(SWTResourceManager.getImage(Carrito_Quitar.class, "/com/imagenes/logo.jpeg"));
 		//shell.setImage(SWTResourceManager.getImage(Carrito_Quitar.class, "/com/imagenes/WhatsApp Image 2022-02-19 at 10.30.59.jpeg"));
 		shell.setSize(450, 331);
 		shell.setText("Plaza la Merced");
@@ -42,7 +43,7 @@ public class Carrito_Quitar {
 		
 		Label lblIngreseElId = new Label(composite, SWT.NONE);
 		lblIngreseElId.setBackground(SWTResourceManager.getColor(255, 255, 224));
-		lblIngreseElId.setFont(SWTResourceManager.getFont("STIXNonUnicode", 7, SWT.NORMAL));
+		lblIngreseElId.setFont(SWTResourceManager.getFont("STIXNonUnicode", 10, SWT.NORMAL));
 		lblIngreseElId.setBounds(10, 10, 323, 17);
 		lblIngreseElId.setText("Ingrese el nombre del producto que desea eliminar:");
 		
@@ -118,25 +119,25 @@ public class Carrito_Quitar {
 		
 		Label lblNombre = new Label(composite, SWT.NONE);
 		lblNombre.setBackground(SWTResourceManager.getColor(255, 255, 224));
-		lblNombre.setFont(SWTResourceManager.getFont("STIXNonUnicode", 6, SWT.BOLD));
+		lblNombre.setFont(SWTResourceManager.getFont("STIXNonUnicode", 10, SWT.BOLD));
 		lblNombre.setBounds(10, 129, 55, 15);
 		lblNombre.setText("Nombre:");
 		
 		Label lblDescripcin = new Label(composite, SWT.NONE);
 		lblDescripcin.setBackground(SWTResourceManager.getColor(255, 255, 224));
-		lblDescripcin.setFont(SWTResourceManager.getFont("STIXNonUnicode", 6, SWT.BOLD));
+		lblDescripcin.setFont(SWTResourceManager.getFont("STIXNonUnicode", 10, SWT.BOLD));
 		lblDescripcin.setBounds(10, 150, 93, 15);
 		lblDescripcin.setText("Descripci\u00F3n:");
 		
 		Label lblCantidad = new Label(composite, SWT.NONE);
 		lblCantidad.setBackground(SWTResourceManager.getColor(255, 255, 224));
-		lblCantidad.setFont(SWTResourceManager.getFont("STIXNonUnicode", 6, SWT.BOLD));
+		lblCantidad.setFont(SWTResourceManager.getFont("STIXNonUnicode", 10, SWT.BOLD));
 		lblCantidad.setBounds(10, 170, 75, 15);
 		lblCantidad.setText("Cantidad:");
 		
 		Label lblPrecio = new Label(composite, SWT.NONE);
 		lblPrecio.setBackground(SWTResourceManager.getColor(255, 255, 224));
-		lblPrecio.setFont(SWTResourceManager.getFont("STIXNonUnicode", 6, SWT.BOLD));
+		lblPrecio.setFont(SWTResourceManager.getFont("STIXNonUnicode", 10, SWT.BOLD));
 		lblPrecio.setBounds(10, 191, 55, 15);
 		lblPrecio.setText("Precio:");
 		
@@ -179,7 +180,7 @@ public class Carrito_Quitar {
 		
 		Label lblExpira = new Label(composite, SWT.NONE);
 		lblExpira.setBackground(SWTResourceManager.getColor(255, 255, 224));
-		lblExpira.setFont(SWTResourceManager.getFont("STIXNonUnicode", 6, SWT.BOLD));
+		lblExpira.setFont(SWTResourceManager.getFont("STIXNonUnicode", 10, SWT.BOLD));
 		lblExpira.setText("Expira:");
 		lblExpira.setBounds(10, 212, 55, 15);
 		

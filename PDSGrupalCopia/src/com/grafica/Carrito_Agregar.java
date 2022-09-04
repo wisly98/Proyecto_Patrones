@@ -43,11 +43,12 @@ public class Carrito_Agregar {
 		}
 		
 		Display display = Display.getDefault();
-		Shell shell = new Shell();
-		shell.setSize(615, 442);
-		shell.setText("SWT Application");
+		Shell shlAgregar = new Shell();
+		shlAgregar.setImage(SWTResourceManager.getImage(Carrito_Agregar.class, "/com/imagenes/logo.jpeg"));
+		shlAgregar.setSize(615, 442);
+		shlAgregar.setText("Plaza la Merced");
 		
-		Composite composite = new Composite(shell, SWT.NONE);
+		Composite composite = new Composite(shlAgregar, SWT.NONE);
 		composite.setBounds(0, 0, 598, 403);
 		
 		Label lblNewLabel = new Label(composite, SWT.NONE);
@@ -298,16 +299,16 @@ public class Carrito_Agregar {
 		btnRegresar.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseDown(MouseEvent e) {
-				shell.close();
+				shlAgregar.close();
 			}
 		});
 		btnRegresar.setFont(SWTResourceManager.getFont("Segoe UI", 10, SWT.NORMAL));
 		btnRegresar.setBounds(312, 368, 75, 25);
 		btnRegresar.setText("Regresar");
 		
-		shell.open();
-		shell.layout();
-		while (!shell.isDisposed()) {
+		shlAgregar.open();
+		shlAgregar.layout();
+		while (!shlAgregar.isDisposed()) {
 			if (!display.readAndDispatch()) {
 				display.sleep();
 			}

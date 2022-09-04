@@ -33,6 +33,7 @@ public class Admin_Agregar {
 	public void open() throws SQLException {
 		Display display = Display.getDefault();
 		Shell shell = new Shell();
+		shell.setImage(SWTResourceManager.getImage(Admin_Agregar.class, "/com/imagenes/logo.jpeg"));
 		shell.setSize(348, 300);
 		shell.setText("Plaza la Merced");
 		//shell.setImage(SWTResourceManager.getImage(Carrito_Quitar.class, "/com/imagenes/WhatsApp Image 2022-02-19 at 10.30.59.jpeg"));
@@ -42,7 +43,7 @@ public class Admin_Agregar {
 		composite.setBackground(SWTResourceManager.getColor(255, 255, 224));
 		
 		Label lbl_pedirdatos = new Label(composite, SWT.NONE);
-		lbl_pedirdatos.setFont(SWTResourceManager.getFont("STIXNonUnicode", 7, SWT.NORMAL));
+		lbl_pedirdatos.setFont(SWTResourceManager.getFont("STIXNonUnicode", 10, SWT.NORMAL));
 		lbl_pedirdatos.setAlignment(SWT.CENTER);
 		lbl_pedirdatos.setBounds(32, 6, 203, 18);
 		lbl_pedirdatos.setText("Ingrese los siguientes datos");
@@ -50,35 +51,35 @@ public class Admin_Agregar {
 		
 		Label lblNombreProducto = new Label(composite, SWT.NONE);
 		lblNombreProducto.setAlignment(SWT.RIGHT);
-		lblNombreProducto.setFont(SWTResourceManager.getFont("STIXNonUnicode", 6, SWT.BOLD));
+		lblNombreProducto.setFont(SWTResourceManager.getFont("STIXNonUnicode", 10, SWT.BOLD));
 		lblNombreProducto.setBounds(10, 58, 124, 15);
 		lblNombreProducto.setText("Nombre producto:");
 		lblNombreProducto.setBackground(SWTResourceManager.getColor(255, 255, 224));
 		
 		Label lblDescripcinProducto = new Label(composite, SWT.NONE);
 		lblDescripcinProducto.setAlignment(SWT.RIGHT);
-		lblDescripcinProducto.setFont(SWTResourceManager.getFont("STIXNonUnicode", 6, SWT.BOLD));
+		lblDescripcinProducto.setFont(SWTResourceManager.getFont("STIXNonUnicode", 10, SWT.BOLD));
 		lblDescripcinProducto.setBounds(10, 79, 135, 15);
 		lblDescripcinProducto.setText("Descripci\u00F3n:");
 		lblDescripcinProducto.setBackground(SWTResourceManager.getColor(255, 255, 224));
 		
 		Label lblNewLabel_1 = new Label(composite, SWT.NONE);
 		lblNewLabel_1.setAlignment(SWT.RIGHT);
-		lblNewLabel_1.setFont(SWTResourceManager.getFont("STIXNonUnicode", 6, SWT.BOLD));
+		lblNewLabel_1.setFont(SWTResourceManager.getFont("STIXNonUnicode", 10, SWT.BOLD));
 		lblNewLabel_1.setBounds(10, 103, 124, 15);
 		lblNewLabel_1.setText("Cantidad producto:");
 		lblNewLabel_1.setBackground(SWTResourceManager.getColor(255, 255, 224));
 		
 		Label lblNewLabel_2 = new Label(composite, SWT.NONE);
 		lblNewLabel_2.setAlignment(SWT.RIGHT);
-		lblNewLabel_2.setFont(SWTResourceManager.getFont("STIXNonUnicode", 6, SWT.BOLD));
+		lblNewLabel_2.setFont(SWTResourceManager.getFont("STIXNonUnicode", 10, SWT.BOLD));
 		lblNewLabel_2.setBounds(10, 125, 124, 15);
 		lblNewLabel_2.setText("Precio producto:");
 		lblNewLabel_2.setBackground(SWTResourceManager.getColor(255, 255, 224));
 		
 		Label lblFechaVencimiento = new Label(composite, SWT.NONE);
 		lblFechaVencimiento.setAlignment(SWT.RIGHT);
-		lblFechaVencimiento.setFont(SWTResourceManager.getFont("STIXNonUnicode", 6, SWT.BOLD));
+		lblFechaVencimiento.setFont(SWTResourceManager.getFont("STIXNonUnicode", 10, SWT.BOLD));
 		lblFechaVencimiento.setBounds(10, 148, 124, 15);
 		lblFechaVencimiento.setText("Expira:");
 		lblFechaVencimiento.setBackground(SWTResourceManager.getColor(255, 255, 224));
@@ -166,7 +167,7 @@ public class Admin_Agregar {
 		
 		Label lblIdProducto = new Label(composite, SWT.NONE);
 		lblIdProducto.setAlignment(SWT.RIGHT);
-		lblIdProducto.setFont(SWTResourceManager.getFont("STIXNonUnicode", 6, SWT.BOLD));
+		lblIdProducto.setFont(SWTResourceManager.getFont("STIXNonUnicode", 10, SWT.BOLD));
 		lblIdProducto.setText("ID producto:");
 		lblIdProducto.setBounds(10, 37, 124, 15);
 		lblIdProducto.setBackground(SWTResourceManager.getColor(255, 255, 224));

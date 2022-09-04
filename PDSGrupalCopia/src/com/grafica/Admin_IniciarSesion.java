@@ -163,7 +163,7 @@ public class Admin_IniciarSesion {
 			
 			}
 		});
-		mostrar.setImage(SWTResourceManager.getImage(Usuario_IniciaSesion.class, "/com/imagenes/mostrarC.png"));
+		mostrar.setImage(SWTResourceManager.getImage(Admin_IniciarSesion.class, "/com/imagenes/mostrar.png"));
 		mostrar.setBounds(333, 107, 33, 21);
 		
 		
@@ -178,7 +178,7 @@ public class Admin_IniciarSesion {
 				
 			}
 		});
-		ocultar.setImage(SWTResourceManager.getImage(Usuario_IniciaSesion.class, "/com/imagenes/ocultarC.png"));
+		ocultar.setImage(SWTResourceManager.getImage(Admin_IniciarSesion.class, "/com/imagenes/ocultar.png"));
 		ocultar.setBounds(333, 107, 33, 21);
 		
 		Label lblUsuario = new Label(composite, SWT.NONE);
@@ -192,11 +192,11 @@ public class Admin_IniciarSesion {
 		lblContrasea.setText("Contrase\u00F1a");
 		
 		Label lblNewLabel = new Label(composite, SWT.NONE);
-		lblNewLabel.setImage(SWTResourceManager.getImage(Usuario_IniciaSesion.class, "/com/imagenes/daa6550f1247a73508c5560300d9d697.jpg"));
+		lblNewLabel.setImage(SWTResourceManager.getImage(Admin_IniciarSesion.class, "/com/imagenes/fondo.png"));
 		lblNewLabel.setBounds(0, 0, 396, 50);
 		
 		Label lblNewLabel_1 = new Label(composite, SWT.NONE);
-		lblNewLabel_1.setImage(SWTResourceManager.getImage(Usuario_IniciaSesion.class, "/com/imagenes/daa6550f1247a73508c5560300d9d697.jpg"));
+		lblNewLabel_1.setImage(SWTResourceManager.getImage(Admin_IniciarSesion.class, "/com/imagenes/fondo.png"));
 		lblNewLabel_1.setBounds(0, 148, 396, 59);
 		
 		

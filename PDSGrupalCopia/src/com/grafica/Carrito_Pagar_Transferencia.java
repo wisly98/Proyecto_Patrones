@@ -30,11 +30,12 @@ public class Carrito_Pagar_Transferencia {
 	 */
 	public void open() {
 		Display display = Display.getDefault();
-		Shell shell = new Shell();
-		shell.setSize(450, 300);
-		shell.setText("SWT Application");
+		Shell shlTransferencia = new Shell();
+		shlTransferencia.setImage(SWTResourceManager.getImage(Carrito_Pagar_Transferencia.class, "/com/imagenes/logo.jpeg"));
+		shlTransferencia.setSize(450, 300);
+		shlTransferencia.setText("Plaza la Merced");
 		
-		Composite composite = new Composite(shell, SWT.NONE);
+		Composite composite = new Composite(shlTransferencia, SWT.NONE);
 		composite.setBounds(0, 0, 434, 262);
 		
 		Label lblDatosParaRealizar = new Label(composite, SWT.NONE);
@@ -114,7 +115,7 @@ public class Carrito_Pagar_Transferencia {
 		btnRegresar.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseDown(MouseEvent e) {
-				shell.close();
+				shlTransferencia.close();
 			}
 		});
 		btnRegresar.setText("Regresar");
@@ -130,9 +131,9 @@ public class Carrito_Pagar_Transferencia {
 		lblNewLabel.setBounds(270, 156, 55, 15);
 		lblNewLabel.setText("$");	
 	
-		shell.open();
-		shell.layout();
-		while (!shell.isDisposed()) {
+		shlTransferencia.open();
+		shlTransferencia.layout();
+		while (!shlTransferencia.isDisposed()) {
 			if (!display.readAndDispatch()) {
 				display.sleep();
 			}

@@ -22,6 +22,7 @@ public class Admin {
 
 		Display display = Display.getDefault();
 		Shell shell = new Shell();
+		shell.setImage(SWTResourceManager.getImage(Admin.class, "/com/imagenes/logo.jpeg"));
 		shell.setSize(634, 431);
 		shell.setText("Plaza la Merced");
 		//shell.setImage(SWTResourceManager.getImage(Carrito_Quitar.class, "/com/imagenes/WhatsApp Image 2022-02-19 at 10.30.59.jpeg"));

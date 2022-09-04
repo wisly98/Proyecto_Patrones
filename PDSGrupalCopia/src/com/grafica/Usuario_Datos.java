@@ -19,7 +19,7 @@ import org.eclipse.swt.events.MouseEvent;
 
 public class Usuario_Datos {
 
-	protected Shell shell;
+	protected Shell shlRegistro;
 	private Text text_contrasenia;
 	private Text text_edad;
 	private Text text_apellido;
@@ -29,9 +29,9 @@ public class Usuario_Datos {
 	public void open() { // método para mostrar los componentes en pantalla.
 		Display display = Display.getDefault();
 		createContents();
-		shell.open();
-		shell.layout();
-		while (!shell.isDisposed()) {
+		shlRegistro.open();
+		shlRegistro.layout();
+		while (!shlRegistro.isDisposed()) {
 			if (!display.readAndDispatch()) {
 				display.sleep();
 			}
@@ -45,44 +45,45 @@ public class Usuario_Datos {
 	protected void createContents() {
 		OperacionesUsuariosCrudProxy pc = OperacionesUsuariosCrudProxy.getInstance();
 	
-		shell = new Shell();
-		shell.setSize(339, 323);
-		shell.setText("SWT Application");
+		shlRegistro = new Shell();
+		shlRegistro.setImage(SWTResourceManager.getImage(Usuario_Datos.class, "/com/imagenes/logo.jpeg"));
+		shlRegistro.setSize(339, 323);
+		shlRegistro.setText("Registro");
 		
-		Composite composite = new Composite(shell, SWT.NONE);
+		Composite composite = new Composite(shlRegistro, SWT.NONE);
 		composite.setBounds(0, 0, 324, 285);
 		
 		Label lblIngreseLosSiguientes = new Label(composite, SWT.NONE);
 		//lblIngreseLosSiguientes.setBackground(SWTResourceManager.getColor(25, 25, 112));
 		//lblIngreseLosSiguientes.setForeground(SWTResourceManager.getColor(255, 255, 255));
 		lblIngreseLosSiguientes.setImage(SWTResourceManager.getImage(Usuario_Datos.class, "/com/imagenes/daa6550f1247a73508c5560300d9d697.jpg"));
-		lblIngreseLosSiguientes.setFont(SWTResourceManager.getFont("STIXNonUnicode", 6, SWT.BOLD));
+		lblIngreseLosSiguientes.setFont(SWTResourceManager.getFont("STIXNonUnicode", 10, SWT.BOLD));
 		lblIngreseLosSiguientes.setBounds(26, 10, 263, 26);
 		lblIngreseLosSiguientes.setText("INGRESE DATOS CORRESPONDIENTES");
 		
 		Label lblUsuario = new Label(composite, SWT.NONE);
-		lblUsuario.setFont(SWTResourceManager.getFont("STIXNonUnicode", 6, SWT.BOLD));
+		lblUsuario.setFont(SWTResourceManager.getFont("STIXNonUnicode", 10, SWT.BOLD));
 		lblUsuario.setBounds(10, 54, 55, 15);
 		lblUsuario.setText("Usuario");
 		
 		Label lblNomre = new Label(composite, SWT.NONE);
 		lblNomre.setText("Nombre");
-		lblNomre.setFont(SWTResourceManager.getFont("STIXNonUnicode", 6, SWT.BOLD));
+		lblNomre.setFont(SWTResourceManager.getFont("STIXNonUnicode", 10, SWT.BOLD));
 		lblNomre.setBounds(10, 85, 55, 15);
 		
 		Label lblApellido = new Label(composite, SWT.NONE);
 		lblApellido.setText("Apellido");
-		lblApellido.setFont(SWTResourceManager.getFont("STIXNonUnicode", 6, SWT.BOLD));
+		lblApellido.setFont(SWTResourceManager.getFont("STIXNonUnicode", 10, SWT.BOLD));
 		lblApellido.setBounds(10, 113, 55, 15);
 		
 		Label lblEdad = new Label(composite, SWT.NONE);
 		lblEdad.setText("Edad");
-		lblEdad.setFont(SWTResourceManager.getFont("STIXNonUnicode", 6, SWT.BOLD));
+		lblEdad.setFont(SWTResourceManager.getFont("STIXNonUnicode", 10, SWT.BOLD));
 		lblEdad.setBounds(10, 147, 55, 15);
 		
 		Label lblContrasea = new Label(composite, SWT.NONE);
 		lblContrasea.setText("Contrase\u00F1a");
-		lblContrasea.setFont(SWTResourceManager.getFont("STIXNonUnicode", 6, SWT.BOLD));
+		lblContrasea.setFont(SWTResourceManager.getFont("STIXNonUnicode", 10, SWT.BOLD));
 		lblContrasea.setBounds(10, 177, 72, 15);
 		
 		text_contrasenia = new Text(composite, SWT.BORDER | SWT.PASSWORD);
@@ -149,7 +150,7 @@ public class Usuario_Datos {
 		btnRgresar.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseDown(MouseEvent e) { //Método para cerrar la ventana al dar click.
-				shell.close();
+				shlRegistro.close();
 			}
 		});
 				
@@ -169,7 +170,7 @@ public class Usuario_Datos {
 			
 			}
 		});
-		mostrar.setImage(SWTResourceManager.getImage(Usuario_Datos.class, "/com/imagenes/mostrarC.png"));
+		mostrar.setImage(SWTResourceManager.getImage(Usuario_Datos.class, "/com/imagenes/mostrar.png"));
 		mostrar.setBounds(262, 171, 27, 21);
 		
 
@@ -183,11 +184,11 @@ public class Usuario_Datos {
 				
 			}
 		});
-		ocultar.setImage(SWTResourceManager.getImage(Usuario_Datos.class, "/com/imagenes/ocultarC.png"));
+		ocultar.setImage(SWTResourceManager.getImage(Usuario_Datos.class, "/com/imagenes/ocultar.png"));
 		ocultar.setBounds(262, 171, 27, 21);
 		
 		Label lblNewLabel_1 = new Label(composite, SWT.NONE);
-		lblNewLabel_1.setImage(SWTResourceManager.getImage(Usuario_Datos.class, "/com/imagenes/daa6550f1247a73508c5560300d9d697.jpg"));
+		lblNewLabel_1.setImage(SWTResourceManager.getImage(Usuario_Datos.class, "/com/imagenes/fondo.png"));
 		lblNewLabel_1.setBounds(0, 220, 324, 65);
 		
 

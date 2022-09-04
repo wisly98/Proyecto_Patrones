@@ -40,11 +40,12 @@ public class Carrito_Pagar_Paypal {
 			e2.printStackTrace();
 		}
 		Display display = Display.getDefault();
-		Shell shell = new Shell();
-		shell.setSize(450, 299);
-		shell.setText("SWT Application");
+		Shell shlPaypal = new Shell();
+		shlPaypal.setImage(SWTResourceManager.getImage(Carrito_Pagar_Paypal.class, "/com/imagenes/logo.jpeg"));
+		shlPaypal.setSize(450, 299);
+		shlPaypal.setText("Plaza la Merced");
 		
-		Composite composite = new Composite(shell, SWT.NONE);
+		Composite composite = new Composite(shlPaypal, SWT.NONE);
 		composite.setBounds(0, 0, 434, 260);
 		
 		Label lblIngreseLosSiguientes = new Label(composite, SWT.NONE);
@@ -142,13 +143,13 @@ public class Carrito_Pagar_Paypal {
 		btnNewButton_1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseDown(MouseEvent e) {
-				shell.close();
+				shlPaypal.close();
 			}
 		});
 		
-		shell.open();
-		shell.layout();
-		while (!shell.isDisposed()) {
+		shlPaypal.open();
+		shlPaypal.layout();
+		while (!shlPaypal.isDisposed()) {
 			if (!display.readAndDispatch()) {
 				display.sleep();
 			}

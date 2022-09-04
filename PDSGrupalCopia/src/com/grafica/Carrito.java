@@ -19,12 +19,13 @@ public class Carrito {
 	 */
 	public void open() {
 		Display display = Display.getDefault();
-		Shell shell = new Shell();
-		shell.setSize(635, 433);
-		shell.setText("SWT Application");
-		shell.setLayout(null);
+		Shell shlCarrito = new Shell();
+		shlCarrito.setImage(SWTResourceManager.getImage(Carrito.class, "/com/imagenes/logo.jpeg"));
+		shlCarrito.setSize(635, 433);
+		shlCarrito.setText("Plaza la Merced");
+		shlCarrito.setLayout(null);
 		
-		Composite composite = new Composite(shell, SWT.NONE);
+		Composite composite = new Composite(shlCarrito, SWT.NONE);
 		composite.setBackground(SWTResourceManager.getColor(255, 255, 224));
 		composite.setBounds(0, 0, 618, 393);
 		
@@ -130,9 +131,9 @@ public class Carrito {
 		});
 		btnNewButton_1.setBounds(261, 253, 97, 96);
 
-		shell.open();
-		shell.layout();
-		while (!shell.isDisposed()) {
+		shlCarrito.open();
+		shlCarrito.layout();
+		while (!shlCarrito.isDisposed()) {
 			if (!display.readAndDispatch()) {
 				display.sleep();
 			}

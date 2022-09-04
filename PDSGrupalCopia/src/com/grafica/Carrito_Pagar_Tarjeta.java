@@ -36,11 +36,12 @@ public class Carrito_Pagar_Tarjeta {
 	 */
 	public void open() {
 		Display display = Display.getDefault();
-		Shell shell = new Shell();
-		shell.setSize(450, 324);
-		shell.setText("SWT Application");
+		Shell shlTarjeta = new Shell();
+		shlTarjeta.setImage(SWTResourceManager.getImage(Carrito_Pagar_Tarjeta.class, "/com/imagenes/logo.jpeg"));
+		shlTarjeta.setSize(450, 324);
+		shlTarjeta.setText("Plaza la Merced");
 		
-		Composite composite = new Composite(shell, SWT.NONE);
+		Composite composite = new Composite(shlTarjeta, SWT.NONE);
 		composite.setBounds(0, 0, 435, 285);
 		
 		Label lblNombre = new Label(composite, SWT.NONE);
@@ -147,7 +148,7 @@ public class Carrito_Pagar_Tarjeta {
 		btnRegresar.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseDown(MouseEvent e) {
-				shell.close();
+				shlTarjeta.close();
 			}
 		});
 		btnRegresar.setFont(SWTResourceManager.getFont("Segoe UI", 10, SWT.NORMAL));
@@ -160,9 +161,9 @@ public class Carrito_Pagar_Tarjeta {
 		lblIngreseLosDatos.setFont(SWTResourceManager.getFont("Segoe UI", 10, SWT.NORMAL));
 		lblIngreseLosDatos.setText("Ingrese los datos de su tarjeta de D\u00E9bito");
 
-		shell.open();
-		shell.layout();
-		while (!shell.isDisposed()) {
+		shlTarjeta.open();
+		shlTarjeta.layout();
+		while (!shlTarjeta.isDisposed()) {
 			if (!display.readAndDispatch()) {
 				display.sleep();
 			}

@@ -27,6 +27,7 @@ public class Admin_Buscar {
 	public void open() {
 		Display display = Display.getDefault();
 		Shell shell = new Shell();
+		shell.setImage(SWTResourceManager.getImage(Admin_Buscar.class, "/com/imagenes/logo.jpeg"));
 		shell.setSize(450, 300);
 		shell.setText("Plaza la Merced");
 		shell.setLayout(null);

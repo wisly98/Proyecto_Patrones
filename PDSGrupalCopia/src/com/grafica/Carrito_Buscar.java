@@ -23,6 +23,7 @@ public class Carrito_Buscar {
 	public void open() {
 		Display display = Display.getDefault();
 		Shell shell = new Shell();
+		shell.setImage(SWTResourceManager.getImage(Carrito_Buscar.class, "/com/imagenes/logo.jpeg"));
 		shell.setSize(450, 300);
 		shell.setText("Plaza la Merced");
 		shell.setLayout(null);
@@ -32,7 +33,7 @@ public class Carrito_Buscar {
 		composite.setBackground(SWTResourceManager.getColor(255, 255, 224));
 		
 		Label lbl_ingrese = new Label(composite, SWT.NONE);
-		lbl_ingrese.setFont(SWTResourceManager.getFont("STIXNonUnicode", 7, SWT.NORMAL));
+		lbl_ingrese.setFont(SWTResourceManager.getFont("STIXNonUnicode", 10, SWT.NORMAL));
 		lbl_ingrese.setBounds(10, 10, 203, 17);
 		lbl_ingrese.setText("Ingrese el nombre del producto");
 		lbl_ingrese.setBackground(SWTResourceManager.getColor(255, 255, 224));
@@ -49,31 +50,31 @@ public class Carrito_Buscar {
 		text_nombre.setBounds(10, 31, 415, 21);
 		
 		Label lblNombre = new Label(composite, SWT.NONE);
-		lblNombre.setFont(SWTResourceManager.getFont("STIXNonUnicode", 6, SWT.BOLD));
+		lblNombre.setFont(SWTResourceManager.getFont("STIXNonUnicode", 10, SWT.BOLD));
 		lblNombre.setBounds(10, 129, 55, 15);
 		lblNombre.setText("Nombre:");
 		lblNombre.setBackground(SWTResourceManager.getColor(255, 255, 224));
 		
 		Label lblDescripcin = new Label(composite, SWT.NONE);
-		lblDescripcin.setFont(SWTResourceManager.getFont("STIXNonUnicode", 6, SWT.BOLD));
+		lblDescripcin.setFont(SWTResourceManager.getFont("STIXNonUnicode", 10, SWT.BOLD));
 		lblDescripcin.setBounds(10, 150, 75, 15);
 		lblDescripcin.setText("Descripci\u00F3n:");
 		lblDescripcin.setBackground(SWTResourceManager.getColor(255, 255, 224));
 		
 		Label lblCantidad = new Label(composite, SWT.NONE);
-		lblCantidad.setFont(SWTResourceManager.getFont("STIXNonUnicode", 6, SWT.BOLD));
+		lblCantidad.setFont(SWTResourceManager.getFont("STIXNonUnicode", 10, SWT.BOLD));
 		lblCantidad.setBounds(10, 170, 55, 15);
 		lblCantidad.setText("Cantidad:");
 		lblCantidad.setBackground(SWTResourceManager.getColor(255, 255, 224));
 		
 		Label lblPrecio = new Label(composite, SWT.NONE);
-		lblPrecio.setFont(SWTResourceManager.getFont("STIXNonUnicode", 6, SWT.BOLD));
+		lblPrecio.setFont(SWTResourceManager.getFont("STIXNonUnicode", 10, SWT.BOLD));
 		lblPrecio.setBounds(10, 191, 55, 15);
 		lblPrecio.setText("Precio:");
 		lblPrecio.setBackground(SWTResourceManager.getColor(255, 255, 224));
 		
 		Label lblExpira = new Label(composite, SWT.NONE);
-		lblExpira.setFont(SWTResourceManager.getFont("STIXNonUnicode", 6, SWT.BOLD));
+		lblExpira.setFont(SWTResourceManager.getFont("STIXNonUnicode", 10, SWT.BOLD));
 		lblExpira.setText("Expira:");
 		lblExpira.setBounds(10, 212, 55, 15);
 		lblExpira.setBackground(SWTResourceManager.getColor(255, 255, 224));
@@ -104,7 +105,7 @@ public class Carrito_Buscar {
 		obten_expira.setBounds(109, 212, 203, 15);
 		
 		Button btnBuscar = new Button(composite, SWT.NONE);
-		btnBuscar.setFont(SWTResourceManager.getFont("STIXNonUnicode", 6, SWT.BOLD));
+		btnBuscar.setFont(SWTResourceManager.getFont("STIXNonUnicode", 10, SWT.BOLD));
 		btnBuscar.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseDown(MouseEvent e) {
@@ -135,7 +136,7 @@ public class Carrito_Buscar {
 		btnBuscar.setText("Buscar");
 		
 		Button btnRegresar = new Button(composite, SWT.NONE);
-		btnRegresar.setFont(SWTResourceManager.getFont("STIXNonUnicode", 6, SWT.BOLD));
+		btnRegresar.setFont(SWTResourceManager.getFont("STIXNonUnicode", 10, SWT.BOLD));
 		btnRegresar.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseDown(MouseEvent e) {

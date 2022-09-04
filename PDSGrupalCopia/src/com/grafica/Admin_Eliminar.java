@@ -30,6 +30,7 @@ public class Admin_Eliminar {
 	public void open() throws SQLException{
 		Display display = Display.getDefault();
 		Shell shell = new Shell();
+		shell.setImage(SWTResourceManager.getImage(Admin_Eliminar.class, "/com/imagenes/logo.jpeg"));
 		shell.setSize(450, 331);
 		shell.setText("Plaza la Merced");
 		//shell.setImage(SWTResourceManager.getImage(Carrito_Quitar.class, "/com/imagenes/WhatsApp Image 2022-02-19 at 10.30.59.jpeg"));
@@ -46,7 +47,7 @@ public class Admin_Eliminar {
 		label_mensaje.setBounds(99, 87, 234, 15);
 		
 		Label lblIngreseElId = new Label(composite, SWT.NONE);
-		lblIngreseElId.setFont(SWTResourceManager.getFont("STIXNonUnicode", 7, SWT.NORMAL));
+		lblIngreseElId.setFont(SWTResourceManager.getFont("STIXNonUnicode", 10, SWT.NORMAL));
 		lblIngreseElId.setBounds(10, 10, 290, 17);
 		lblIngreseElId.setText("Ingrese el ID del producto que desea eliminar:");
 		lblIngreseElId.setBackground(SWTResourceManager.getColor(255, 255, 224));
@@ -129,32 +130,32 @@ public class Admin_Eliminar {
 		btnBuscar.setText("Buscar");
 		
 		Label lblId = new Label(composite, SWT.NONE);
-		lblId.setFont(SWTResourceManager.getFont("STIXNonUnicode", 6, SWT.BOLD));
+		lblId.setFont(SWTResourceManager.getFont("STIXNonUnicode", 10, SWT.BOLD));
 		lblId.setBounds(10, 108, 55, 15);
 		lblId.setText("Id:");
 		lblId.setBackground(SWTResourceManager.getColor(255, 255, 224));
 		lblId.setBackground(SWTResourceManager.getColor(255, 255, 224));
 		
 		Label lblNombre = new Label(composite, SWT.NONE);
-		lblNombre.setFont(SWTResourceManager.getFont("STIXNonUnicode", 6, SWT.BOLD));
+		lblNombre.setFont(SWTResourceManager.getFont("STIXNonUnicode", 10, SWT.BOLD));
 		lblNombre.setBounds(10, 129, 55, 15);
 		lblNombre.setText("Nombre:");
 		lblNombre.setBackground(SWTResourceManager.getColor(255, 255, 224));
 		
 		Label lblDescripcin = new Label(composite, SWT.NONE);
-		lblDescripcin.setFont(SWTResourceManager.getFont("STIXNonUnicode", 6, SWT.BOLD));
+		lblDescripcin.setFont(SWTResourceManager.getFont("STIXNonUnicode", 10, SWT.BOLD));
 		lblDescripcin.setBounds(10, 150, 93, 15);
 		lblDescripcin.setText("Descripci\u00F3n:");
 		lblDescripcin.setBackground(SWTResourceManager.getColor(255, 255, 224));
 		
 		Label lblCantidad = new Label(composite, SWT.NONE);
-		lblCantidad.setFont(SWTResourceManager.getFont("STIXNonUnicode", 6, SWT.BOLD));
+		lblCantidad.setFont(SWTResourceManager.getFont("STIXNonUnicode", 10, SWT.BOLD));
 		lblCantidad.setBounds(10, 170, 55, 15);
 		lblCantidad.setText("Cantidad:");
 		lblCantidad.setBackground(SWTResourceManager.getColor(255, 255, 224));
 		
 		Label lblPrecio = new Label(composite, SWT.NONE);
-		lblPrecio.setFont(SWTResourceManager.getFont("STIXNonUnicode", 6, SWT.BOLD));
+		lblPrecio.setFont(SWTResourceManager.getFont("STIXNonUnicode", 10, SWT.BOLD));
 		lblPrecio.setBounds(10, 191, 55, 15);
 		lblPrecio.setText("Precio:");
 		lblPrecio.setBackground(SWTResourceManager.getColor(255, 255, 224));
@@ -196,7 +197,7 @@ public class Admin_Eliminar {
 		btnCancelar.setText("Regresar");
 		
 		Label lblExpira = new Label(composite, SWT.NONE);
-		lblExpira.setFont(SWTResourceManager.getFont("STIXNonUnicode", 6, SWT.BOLD));
+		lblExpira.setFont(SWTResourceManager.getFont("STIXNonUnicode", 10, SWT.BOLD));
 		lblExpira.setText("Expira:");
 		lblExpira.setBounds(10, 212, 55, 15);
 		lblExpira.setBackground(SWTResourceManager.getColor(255, 255, 224));

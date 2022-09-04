@@ -39,7 +39,7 @@ public class Usuario_IniciaSesion {
 		
 		
 		shell.setBackground(SWTResourceManager.getColor(0, 255, 255));
-		shell.setImage(SWTResourceManager.getImage(Carrito_Quitar.class, "/com/imagenes/WhatsApp Image 2022-02-19 at 10.30.59.jpeg"));		
+		shell.setImage(SWTResourceManager.getImage(Usuario_IniciaSesion.class, "/com/imagenes/logo.jpeg"));		
 		shell.setSize(411, 244);
 		shell.setText("Iniciar Sesión Usuario");
 		
@@ -179,7 +179,7 @@ public class Usuario_IniciaSesion {
 			
 			}
 		});
-		mostrar.setImage(SWTResourceManager.getImage(Usuario_IniciaSesion.class, "/com/imagenes/mostrarC.png"));
+		mostrar.setImage(SWTResourceManager.getImage(Usuario_IniciaSesion.class, "/com/imagenes/mostrar.png"));
 		mostrar.setBounds(333, 107, 33, 21);
 		
 
@@ -193,7 +193,7 @@ public class Usuario_IniciaSesion {
 				
 			}
 		});
-		ocultar.setImage(SWTResourceManager.getImage(Usuario_IniciaSesion.class, "/com/imagenes/ocultarC.png"));
+		ocultar.setImage(SWTResourceManager.getImage(Usuario_IniciaSesion.class, "/com/imagenes/ocultar.png"));
 		ocultar.setBounds(333, 107, 33, 21);
 		
 		Button btnCrearCuenta = new Button(composite, SWT.NONE);
@@ -226,11 +226,11 @@ public class Usuario_IniciaSesion {
 		lblContrasea.setText("Contrase\u00F1a");
 		
 		Label lblNewLabel = new Label(composite, SWT.NONE);
-		lblNewLabel.setImage(SWTResourceManager.getImage(Usuario_IniciaSesion.class, "/com/imagenes/daa6550f1247a73508c5560300d9d697.jpg"));
+		lblNewLabel.setImage(SWTResourceManager.getImage(Usuario_IniciaSesion.class, "/com/imagenes/fondo.png"));
 		lblNewLabel.setBounds(0, 0, 396, 50);
 		
 		Label lblNewLabel_1 = new Label(composite, SWT.NONE);
-		lblNewLabel_1.setImage(SWTResourceManager.getImage(Usuario_IniciaSesion.class, "/com/imagenes/daa6550f1247a73508c5560300d9d697.jpg"));
+		lblNewLabel_1.setImage(SWTResourceManager.getImage(Usuario_IniciaSesion.class, "/com/imagenes/fondo.png"));
 		lblNewLabel_1.setBounds(0, 148, 396, 59);
 		
 		

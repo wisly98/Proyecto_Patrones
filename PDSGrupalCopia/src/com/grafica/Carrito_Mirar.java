@@ -33,6 +33,7 @@ public class Carrito_Mirar {
 		
 		Display display = Display.getDefault();
 		Shell shell = new Shell();
+		shell.setImage(SWTResourceManager.getImage(Carrito_Mirar.class, "/com/imagenes/logo.jpeg"));
 		shell.setSize(516, 420);
 		shell.setText("Plaza la Merced");
 		//shell.setImage(SWTResourceManager.getImage(Carrito_Quitar.class, "/com/imagenes/WhatsApp Image 2022-02-19 at 10.30.59.jpeg"));
