@@ -100,7 +100,9 @@ public class Carrito_Pagar_Transferencia {
 					}
 					label_t.setText("0.0");
 					label_msj.setText("Transferencia realizada con éxito");
-					cc.getProductos().removeAll(prod);
+					for(int i = 0; i< prod.size(); i++) {
+						cc.removeProducto(prod.get(i));
+					}
 				} catch (SQLException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();

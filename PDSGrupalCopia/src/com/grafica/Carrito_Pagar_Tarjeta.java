@@ -131,7 +131,9 @@ public class Carrito_Pagar_Tarjeta {
 				}
 						msj.setText("Pago realizado con éxito");
 						label_t.setText("0.0");
-						cc.getProductos().removeAll(prod);
+						for(int i = 0; i< prod.size(); i++) {
+							cc.removeProducto(prod.get(i));
+						}
 					} catch (SQLException e1) {
 						// TODO Auto-generated catch block
 						e1.printStackTrace();

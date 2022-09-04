@@ -121,7 +121,10 @@ public class Carrito_Pagar_Paypal {
 								
 									}
 									label_msj.setText("Pago realizado con éxito");
-									cc.getProductos().removeAll(prod);
+									
+									for(int i = 0; i< prod.size(); i++) {
+										cc.removeProducto(prod.get(i));
+									}
 								} catch (SQLException e1) {
 									// TODO Auto-generated catch block
 									e1.printStackTrace();
